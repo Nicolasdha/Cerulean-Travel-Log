@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'r24(^#i)(0i27=3b28vo(0_nj*+0rt&!m^f0j2jthrrtsl+ss+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cerulean-learning-log.herokuapp.com']
 
 
 # Application definition

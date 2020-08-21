@@ -6,9 +6,9 @@
 
 {% block content %}
 <p>
-	<h4>
+	<h3>
 	<a href ="{% url 'learning_logs:new_entry' topic.id %}">Add New Entry</a>
-	</h4>
+	</h3>
 </p>
 
 {% for entry in entries %}
@@ -27,7 +27,9 @@
 		</div>
 	</div> <!--panel -->
 	{% empty %}
+	<h3>
 		There have been no entries added yet. Please add one!
+	</h3>
 	{% endfor %}
 
 {% endblock content %}
