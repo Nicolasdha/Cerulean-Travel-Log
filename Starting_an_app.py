@@ -1986,7 +1986,10 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 	import dj_database_url
 # here we import to help configure the database on HKU. HKU ueses PostgreSQL (also called Postgres)
 # a more advanced database than SQLite, and these settings configure the project to use
-# PostgreSQL on HKU.
+# PostgreSQL on HKU. The actual /tmp directory is different for each deployment; it looks 
+# something like /tmp/build_07bcdf3ae946245cce5541e622a3799a. This code looks at the first 
+# four characters of the current directory, and uses the Heroku settings if the current 
+# directory starts with /tmp.
 	DATABASES = {
 		'default': dj_database_url.config(default='postgres://localhost')
 	}
@@ -2008,5 +2011,230 @@ if cwd == '/app' or cwd[:4] == '/tmp':
 		os.path.join(BASE_DIR, 'static'),
 		)
 # This sets up the project to serve static files correctly on HKU
+
+## ------------- MAKING A PROCFILE TO START PROCESSES ---------------
+# A Procfile tells HKU which processes to start in order to serve the project properly
+# This is a one-line file that you should save as Procfile, with an uppercase P and no file 
+# extension, in the same dir as manage.py and put in
+web: gunicorn learning_log.wsgi --log-file -
+# This line tells HKU to use gunicorn as a server and to use the settings in learning_log/wsgi.py
+# to launch the app. The log-file flag tells HKU the kinds of events to log
+
+###------------ MODIFYING WSGI.PY FOR HEROKU-------
+# Need to modify wsgi.py for HKU b/c HKU needs a slightly different setup than what weve
+# been using:
+
+import os
+
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'learning_log.settings')
+
+application = Cling(get_wsgi_application())
+# we import Cling, which helps serve static files correctly and use it to launch the application
+# This code will work locally as well, so no need to put it in an if block
+### DONT NEED TO DO THIS WITH WHITENIOSE
+
+
+### --- Making a directory for static files ----
+# On HKU DJ collects all the static files and places them in one place so it can manage them well
+# Need to create a dir for these static files. Inside learning_log folder there is another
+# folder called learning_log. In this nested folder make a new folder called static
+# with the path
+learning_log/learning_log/static/
+# Also need to make a placeholder file to store in this dir for now, b/c empty dir wont
+# be included in this project when it is pushed to HKU. in the static/ dir make a 
+# file called placeholder.txt 
+This file ensure that learning_log/static will be added to the project. DJ will collect
+static files and place them in learning_log/static
+
+
+##### ------ USING THE GUNICORN SERVER LOCALLY --------
+# If using linux or OSX can try gunicorn before delpying to heroku - from venv run 
+heroku local # need to configure git first I think
+
+
+# ------ configuring GIT
+# in venv 
+git config --global user.name "Nicolasdha"
+git config --global user.email "Sankp001@gmail.com"
+
+##---- setting pycache/sqlite3/venv to .gitignore -----------
+# in same folder as manage.py make a folder called .gitignore and put in
+11_env/
+__pycache__/
+*.sqlite3
+# ignore the venv b/c can recreate it anytime, the pycache and, changes to local DB b/c its 
+# bad habit. If you are ever using SQLite on a server, you might accidentally overwrite the
+# live DB with the local test DB when you push project to server
+
+### -------- COMMITTING THE PROJECT ---------
+# Need to initialize a GIT REPOSITORY for LEarning Log, add all nessesary files to REPOSITORY, 
+# and commit the initial state of the project. in active venv
+
+git init
+# initialize git command for empty repository
+
+git add .
+# add all files that arnt being ignored to the repo - the dot is important
+
+git commit -am "Ready for deloyment to heroku."
+# the git commit -am commit message: the -a flag tells Git to include all changed files in this
+# commit and the -m flag tell Git to record a log message
+
+git status 
+# this indicates on master branch and working dir is clean - this is the status you want to see 
+# when you push your project to Heroku
+
+
+##### --------- PUSHING TO HEROKU --------
+# Finally rdy to push to HKU in venv LL session
+heroku login # use HKU credentials
+heroku create
+# tell heroku to build an empty project. HKU will gen a name made up of two words and a number
+# which can change lateron 
+
+git push heroku master 
+# tell tell GIT to push the master branch of the project to the repository HLU just created
+# HKU then builds the project on its servers using these files - then it spits out a URL
+# we will use to access the live project
+
+https://git.heroku.com/evening-waters-39692.git
+
+### CONFIG PROJECT
+# when issued the commands above the project is deployed but not fully configuredto check that
+# the server process started correctly use the heroku ps command
+
+heroku ps # this shows you how much free time is left on this project
+Free dyno hours quota remaining this month: 550h 0m (100%)
+
+
+###------ SETTING UP DB ON HEROKU -----
+#Need to run migrate to set up the live DB and apply all the migrations we generated
+# during development so far. Can run DJ and PY commands on a HKU project use the command 
+heroku run
+# Here is how to run migrate on the Heroku deployment in venv LL
+heroku run python manage.py migrate
+# DJ applies the default migrations and the migrations geneerated during development
+
+
+### REFINING THE HEROKU DEVELOPMENT
+
+# Refine the delopyment by creating a superuser just like locally
+# We'll also make the project more secure by changing the setting DEBUG to False
+# can run one-off commands with heroku run in terminal but also can run cmnds by opening
+# a Bash terminal session while connected to the HKU server using the cmnd heroku run bash
+# BASH is a langugage that runs in many linux terminals we will use Bash terminal session
+# to create a superuser so we can access the admin site on the live app
+heroku run bash
+ls
+# do this to see that the same files and dirs are here as in the local one can nav this
+# system just like any other ones
+python manage.py createsuperuser
+Ndurikha # Cant use Nicolasdha b/c its already taken
+sankp001@gmail.com
+Pittsburgh1
+Pittsburgh1
+
+## Now can add /admin/ to the end of the URL for the lice app and log into the admin site - 
+# you will have access to everyones data!1
+
+###  ----------- CREATING A USER FIRNDLY URL ON HEROKU -----
+# Can rename by the issuing
+heroku apps:rename learning-log
+# can use letter,number,dashes when naming and no one can have claimed it 
+
+#### ----- SECURING THE LIVE PROJECT
+# need to DEBUG=False or else ppl will be able to get way too much information about the projec 
+# this is vital info when dev but not when live. We also need to make sure no one can
+# get info or redirect requersts by pretending to be the projects host
+# in settings.py whether user choosen name or heroku provided
+
+# Allow only Heroku to host the project
+Heroku Settings
+import os
+cwd = os.getcwd()
+if cwd =='/app' or cwd[:4] == '/tmp':
+    import dj_database_url
+    DATABASES = {
+        'default' : dj_database_url.config(default='postgres://localhost')
+    }
+
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure()
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # Allow only Heroku to host the project
+    DEBUG = True
+    ALLOWED_HOSTS = ['cerulean-learning-log.herokuapp.com']
+
+    # Allow all host headers
+    ALLOWED_HOSTS = ['*']
+
+    # Static asset configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+        )
+
+## COMMITING AND PUSHING CHANGES -----
+# need to commit changes in GIT repository and push changes to Heroku
+
+git commit -am "Set DEBUG=False and changes made on new_topic for Heroku"
+# issue a short descriptive comment - remember the -am flag makes sure GIT commits all the files
+# that have changed and records the log message. Git recognizes that one file has been changed
+# and commits that change in the repository
+git status
+# to make sure it says clean and working with the master branch of the repository. It is essential
+# to check this before pushing to Heroku. If you dont see this message, some changes have not
+# been commited and those changes wont be pushed to the server. You can try to issue the
+# commit comand again but if still issues look thry appendix D
+git push heroku master
+# rebuilds project to encompass changes. doesnt rebuild the DB so wont have to run migrate again
+
+### ----- CREATING CUSTOM ERROR PAGES ---------
+# Programmed in the 404 error if user request a topic that is not theirs- 500 server errors are
+# internal errors, A 404 usually means DJ code is correct but objects being requested dont 
+# exist: a 500 error usually means theres an error in the code written like an error in a 
+# function in the views.py. Currently DJ returns same code for both so create our own 
+# 404 and 500 error page templates that makes the over appearce of learning log
+# these must go in the root template dir - learning_log/learning_log/templates
+# make a new folder templates in dir as above and new file 404.html
+{% extends 'learning_logs/base.html' %}
+
+{% block header %}
+	<h2> The item you requested is not available. (404)</h2>
+{% endblock header %}
+# this gives simple 404 information but is styled to match the site
+
+## new 500.html
+{% extends 'learning_logs/base.html' %}
+
+{% block header %}
+	<h2> There has been an internal error. (500)</h2>
+{% endblock header %}
+
+# these new files require a slight change in settings.py need to import os
+import os
+
+ROOT_URLCONF = 'learning_log.urls'
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'learning_log/templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
 
 
