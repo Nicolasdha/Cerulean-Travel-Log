@@ -2236,5 +2236,24 @@ TEMPLATES = [
     },
 ]
 
+# --- Using the get_object_or_404() method --------------
+
+# At this point if a user manually requests a topic or entry that doesnt exist, theyll get a 500
+# server error. DJ tries to render the page but doesnt have enough informatino to do so, and
+# the result is a 500 error. This situation is more accuratley handeled as a 404 error and we 
+# can implement this behvior with the DJ shortcut function get_object_or_404(). This func
+# tried to get the request object from the DB but if that object doesnt exist it raises a 404
+# can import this function into views.py and use it in the plce of get().
+
+import django.shortcuts import render, get_object_or_404
+@login_required
+def topic(request, topic_id):
+	'''show a single topic and all of its entries'''
+	topic = get_object_or_404(Topic, id=topic_id)
+# now you will get a 404 if request something not there
+	check_topic_owner(request, topic_id)
+	entries = topic.entry_set.order_by('-date_added')
+	context = {'topic':topic, 'entries':entries}
+	return render(request, 'learning_logs/topic.html', context)
 
 
