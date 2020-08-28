@@ -50,6 +50,7 @@ body {
     height: auto;
     padding-left: 0px;
     margin-left: 34.5%;
+    opacity: .7
 
 
 }
@@ -59,6 +60,7 @@ body {
     text-decoration: none;
     color: gray;
     font-size: 3.6rem;
+    
 }
 
 .nav div.logo a:hover {
@@ -85,8 +87,10 @@ body {
     padding: 0;
     padding-right: 0rem;
     padding-left: 10px;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
     color: gray;
+    opacity: .7
+    
 
 }
 
@@ -94,7 +98,8 @@ body {
     text-decoration: none;
     color: gray;
     line-height: 50px;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+    opacity: 
 }
 
 .nav div.main_list ul li a:hover {
@@ -117,7 +122,7 @@ body {
 }
 
 .nav {
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 20px;
     -webkit-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -135,42 +140,57 @@ body {
 @media screen and (max-width:768px) {
     .navTrigger {
         display: block;
+
     }
     .nav div.logo {
-        margin-left: 15px;
+        margin-left: 0px;
+
+       
+
     }
     .nav div.main_list {
         width: 100%;
         height: 0;
         overflow: hidden;
+        opacity: 1;
     }
     .nav div.show_list {
         height: auto;
         display: none;
+
+
+
+
     }
     .nav div.main_list ul {
         flex-direction: column;
-        width: 100%;
-        height: 100vh;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: #111;
+        width: 25vw;
+        height: 13vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: transparent;
         /*same background color of navbar*/
-        background-position: center top;
+        background-position: center left;
+
     }
     .nav div.main_list ul li {
         width: 100%;
-        text-align: right;
+        text-align: left;
+
+
     }
     .nav div.main_list ul li a {
         text-align: center;
-        width: 100%;
-        font-size: 3rem;
-        padding: 20px;
+        width: 35%;
+        font-size: 2.4rem;
+        padding: 0px;
+
+
     }
     .nav div.media_button {
         display: block;
+
     }
 }
 
@@ -372,6 +392,7 @@ body {
 }
 
 
+}
 
 .myH2 {
 	text-align:center;
@@ -379,8 +400,8 @@ body {
 }
 .myP {
 	text-align: center;
-	padding-left:35%;
-	padding-right:35%;
+	padding-left:5%;
+	padding-right:5%;
 	margin-top: 30px;
 	font-size: 20px;
 @media all and (max-width:700px){
@@ -398,7 +419,7 @@ body {
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
                 	{% if user.is_authenticated %}
-                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> | </li>
+                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> <p> | </p> </li>
 					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
 					{% else %}
 					<li><a href="{% url 'users:register' %}">Register</a> | </li>
@@ -420,7 +441,7 @@ body {
         <!-- just to make scrolling effect possible -->
 			<h2 class="myH2" style= "color:lightgray"></h2>
 			<p class="myP" style = "color:gray">“The journey of a thousand miles begins with a single step.”
-― Lao Tzu</p>
+<br>― Lao Tzu</p>
 			<p class="myP"></p>
 			<p class="myP"></p>
 			<p class="myP"></p>
@@ -442,4 +463,13 @@ body {
                 $('.nav').removeClass('affix');
             }
         });
+        
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+  
+
+});
     </script>
