@@ -1,21 +1,554 @@
-{% extends 'learning_logs/base.html' %}
 {% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 
-{% block header %}
-	<h2>Log into your account</h2>
-{% endblock header %}
 
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title> Log In </title>
+
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  
+<!-------------- CSS SECTION ----------->
+
+    <style> 
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    font-size: 1rem;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 1vh;
+}
+
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    line-height: 50px;
+    text-align: center;
+    font-size: 2.25rem;
+    color: white;
+    z-index: 100;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 0px;
+    margin-left: 29%;
+    opacity: .7;
+}
+
+
+.nav div.logo a {
+    color: white;
+    font-size: 2.25rem;
+    
+}
+
+.nav div.logo a:hover {
+    color: forestgreen;
+     text-decoration: none;
+}
+
+.nav div.main_list {
+    float: left;
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    padding-left: 10px;
+    font-size: 1.5rem;
+    color: white;
+    opacity: .7
+}
+
+.nav div.main_list ul li a {
+    color: white;
+
+}
+
+.nav div.main_list ul li a:hover {
+    color: forestgreen;
+     text-decoration: none;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 0vh;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+
+    }
+    .nav div.logo {
+        margin-left: 0px;
+
+    }
+
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        opacity: 1;
+
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+
+
+    }
+
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 50vw;
+        height: 20vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: transparent;
+        /*same background color of navbar*/
+        background-position: center left;
+
+
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: left;
+         color: transparent;
+
+
+
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 35%;
+        font-size: 1.5rem;
+        padding: 0px;
+        color: white;
+        font-weight: 450;
+
+
+    }
+    .nav div.media_button {
+        display: block;
+
+    }
+}
+
+
+/* Animation */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #303030;
+    opacity: .8;}
+}
+
+.leftside, .rightside {
+	height: 100vh;
+	width: 100%;
+}
+
+.leftside {
+	margin: 0px;
+	padding: 0px;
+	 background-image: url(https://i.ibb.co/55dTtjF/andrew-neel-z55-CR-d0ayg-unsplash.jpg);
+	background-position: center top;
+	background-size: cover;
+	height: 100vh;
+	width: 103.5%;
+    box-shadow: 0 0 50px 50px black inset;
+}
+
+.rightside {
+	margin-top: 0px;
+	opacity: .7;
+	color: white;
+}
+
+.size {
+    font-size: 2rem;
+    padding-left: 10%;
+    padding-right: 25%;
+    padding-top: 175px
+}
+
+.quote {
+    text-align: center;
+    padding-left: 15vw ;
+    padding-right: 15vw ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: gray;
+    line-height: 2.7vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #56565a;
+}
+
+@media all and (max-width:575px){
+   .size {
+        font-size: 1rem;
+        padding-left: 10%;
+        padding-right: 10%;
+        padding-top: 1%
+    }
+    .leftside {
+        margin: 0px;
+        padding: 0px;
+        background-position: center top;
+        background-size: cover;
+        height: 50vh;
+        width: 103.5%;
+    }
+}
+
+
+
+</style>
+
+<!---------- HTML SECTION  ------->
+<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'learning_logs:index' %}">Travel Log</a>  |
+
+            </div>
+            <div id="mainListDiv" class="main_list">
+
+                <ul class="navlinks">
+
+                	{% if user.is_authenticated %}
+
+                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> | </li>
+
+					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
+
+					{% else %}
+
+					<li><a href="{% url 'users:register' %}">Register</a> | <a href="{% url 'users:login' %}" >Log In</a></li>
+
+					<!--<li><a href="{% url 'users:login' %}" >Log In</a></li>-->
+					{% endif %}
+                    
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+</nav>
+
+    <section class="home">
+    </section>
+
+<body>
 {% block content %}
 
+    <div class="row no-gutters">
+		<div class="col-sm-6 no-gutters">
+			<div class='leftside'>
+				</div>
+				</div>
+		<div class="col-sm-6 no-gutters">
+			<div class="rightside">
+                <div class='transbox'>
 
-<form method= "post" action="{% url 'users:login' %}" class="form">
-	{% csrf_token %}
-	{% bootstrap_form form %}
+				<form method= "post" action="{% url 'users:login' %}" class="form size">
+					{% csrf_token %}
+					{% bootstrap_form form %}
 
-	{% buttons %}
-	<button name='submit' class="btn btn-primary">log in</button>
-	{% endbuttons %}
+					{% buttons %}
+					<button name='submit' class="btn btn-primary">log in</button>
+					{% endbuttons %}
 
-	<input type = 'hidden' name='next' value="{% url 'learning_logs:index' %}">
-</form>
+					<input type = 'hidden' name='next' value="{% url 'learning_logs:index' %}">
+				</form>
+            </div>
+			</div>
+		</div>
+    </div>
+
+<div class='quote'>
+	<p>
+	“I am not the same having seen the moon shine on the other side of the world.”
+<br>― Mary Anne Radmacher
+	</p>
+</div>
+
 {% endblock content %}
+
+</body>
+</html>
+
+<!--------------- JAVASCRIPT SECTION ------------>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+<!-- Function used to display drop down menu-->
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+        
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+});
+    </script>

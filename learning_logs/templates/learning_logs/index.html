@@ -10,26 +10,21 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Travel Log </title>
+        <title> Travel Log - Home Page</title>
 
-         <link rel="stylesheet" 
-          href= "learning_logs:stylesheet.css"> 
-  
-    <style> 
-          
+
+    </head>
+
+  <!------- CSS SECTION ------>
+<style>         
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
 html,
 body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: "Quicksand", sans-serif;
-    font-size: 62.5%;
-    font-size: 10px;
     background-color: black;
-
 }
-
 
 /* Navbar section */
 
@@ -41,69 +36,52 @@ body {
     text-align: center;
     font-size: 3.6rem;
     color: gray;
-
 }
 
 .nav div.logo {
     float: left;
     width: auto;
     height: auto;
-    padding-left: 0px;
-    margin-left: 34.5%;
-    opacity: .7
-
-
+    margin-left: 29%;
+    opacity: .7;
 }
 
-
 .nav div.logo a {
-    text-decoration: none;
     color: gray;
     font-size: 3.6rem;
-    
+    text-decoration: none;
 }
 
 .nav div.logo a:hover {
     color: forestgreen;
+    text-decoration: underline;
+    text-decoration: none;
 }
 
 .nav div.main_list {
-    height: 50px;
     float: left;
 }
 
 .nav div.main_list ul {
-    width: 100%;
-    height: 50px;
     display: flex;
     list-style: none;
-    margin: 0;
     padding: 0;
 }
 
 .nav div.main_list ul li {
-    width: auto;
-    height: 50px;
-    padding: 0;
-    padding-right: 0rem;
     padding-left: 10px;
     font-size: 2.4rem;
     color: gray;
-    opacity: .7
-    
-
+    opacity: .7;
 }
 
 .nav div.main_list ul li a {
-    text-decoration: none;
     color: gray;
-    line-height: 50px;
-    font-size: 2.4rem;
-    opacity: 
 }
 
 .nav div.main_list ul li a:hover {
     color: forestgreen;
+    text-decoration: none;
 }
 
 
@@ -135,13 +113,13 @@ body {
     .container {
         margin: 0;
     }
-}
+    }
 
 @media screen and (max-width:768px) {
     .navTrigger {
         display: block;
-
     }
+
     .nav div.logo {
         margin-left: 0px;
     }
@@ -152,31 +130,29 @@ body {
         overflow: hidden;
         opacity: 1;
     }
+
     .nav div.show_list {
         height: auto;
         display: none;
-
     }
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 30vw;
+        width: 50vw;
         height: 20vh;
         right: ;
         left: ;
         bottom:;
         background-color: transparent;
-        /*same background color of navbar*/
         background-position: center left;
-
     }
+
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-         color: transparent;
-
-
+        color: transparent;
     }
+
     .nav div.main_list ul li a {
         text-align: center;
         width: 35%;
@@ -184,15 +160,12 @@ body {
         padding: 0px;
         color: black;
         font-weight: 450;
-
-
     }
+
     .nav div.media_button {
         display: block;
-
     }
 }
-
 
 /* Animation */
 
@@ -208,7 +181,7 @@ body {
 }
 
 .navTrigger i {
-    background-color: #fff;
+    background-color: gray;
     border-radius: 2px;
     content: '';
     display: block;
@@ -261,7 +234,6 @@ body {
         -webkit-transform: rotate(45deg);
     }
 }
-
 @keyframes inM {
     50% {
         transform: rotate(0deg);
@@ -391,39 +363,54 @@ body {
 }
 
 
-}
+.quote{}
 
-.myH2 {
-	text-align:center;
-	font-size: 4rem;
+::-webkit-scrollbar {
+    width: 10px;
 }
-.myP {
-	text-align: center;
-	padding-left:5%;
-	padding-right:5%;
-	margin-top: 30px;
-	font-size: 20px;
-@media all and (max-width:700px){
-	.myP {
-		padding:2%;
-	}
+::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #56565a;
 }
 
 </style>
+
+<!------ HTML SECTION ------>
+
+
+{% block content %}
+<body>
+
 <nav class="nav">
         <div class="container">
+
             <div class="logo">
+
                 <a href="{% url 'learning_logs:index' %}">Travel Log</a>  |
+
             </div>
+
             <div id="mainListDiv" class="main_list">
+
                 <ul class="navlinks">
+
                 	{% if user.is_authenticated %}
-                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> <p> | </p> </li>
-					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
+
+                	   <li><a href="{% url 'learning_logs:topics' %}">Locations</a> | <a href="{% url 'users:logout' %}">Log Out</a></li>
+
+                    <!--<li><a href="{% url 'users:logout' %}">Log Out</a></li>-->
+
 					{% else %}
-					<li><a href="{% url 'users:register' %}">Register</a> | </li>
-					<li><a href="{% url 'users:login' %}" >Log In</a></li>
+
+					<li><a href="{% url 'users:register' %}">Register</a> | <a href="{% url 'users:login' %}" >Log In</a></li>
+
+					<!--<li><a href="{% url 'users:login' %}" >Log In</a></li>-->
+
 					{% endif %}
+
                 </ul>
             </div>
             <span class="navTrigger">
@@ -432,27 +419,29 @@ body {
                 <i></i>
             </span>
         </div>
-    </nav>
+</nav>
 
-    <section class="home">
-    </section>
-    <div style="height: 100px">
-        <!-- just to make scrolling effect possible -->
-			<h2 class="myH2" style= "color:lightgray"></h2>
-			<p class="myP" style = "color:gray">“The journey of a thousand miles begins with a single step.”
-<br>― Lao Tzu</p>
-			<p class="myP"></p>
-			<p class="myP"></p>
-			<p class="myP"></p>
-				<p class="myP">
-			</p>
-    </div>
+<section class="home">
+</section>
 
-<!-- Jquery needed - NOT NEEDED? --> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+<div>
+	<p style="text-align:center;padding:15;font-size: 2rem;color:gray;" >
+		“The journey of a thousand miles begins with a single step.” <br>― Lao Tzu
+	</p>
+</div>
 
-<!-- Function used to shrink nav bar removing paddings and adding black background -->
+
+</body>
+</html>
+{% endblock content %}
+
+
+<!--------------- JAVASCRIPT SECTION ------------>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/scripts.js"></script>
+
+<!-- Function used to display drop down menu-->
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {

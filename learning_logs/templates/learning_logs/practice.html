@@ -115,6 +115,7 @@ body {
     background-image: url(https://i.ibb.co/CnLXGvw/luca-bravo-O453-M2-Liufs-unsplash-1.jpg);
     background-position: center top;
 	background-size:cover;
+	z-index: -5
 }
 
 .navTrigger {
@@ -144,31 +145,24 @@ body {
     }
     .nav div.logo {
         margin-left: 0px;
-    
-        font-weight
-
-       
-
     }
+
     .nav div.main_list {
         width: 100%;
         height: 0;
         overflow: hidden;
         opacity: 1;
-
     }
     .nav div.show_list {
         height: auto;
         display: none;
 
-
-
-
     }
+
     .nav div.main_list ul {
         flex-direction: column;
-        width: 25vw;
-        height: 13vh;
+        width: 50vw;
+        height: 20vh;
         right: ;
         left: ;
         bottom:;
@@ -176,12 +170,11 @@ body {
         /*same background color of navbar*/
         background-position: center left;
 
-
     }
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-        color: black;
+         color: transparent;
 
 
     }
@@ -407,10 +400,23 @@ body {
 }
 .myP {
 	text-align: center;
-	padding-left:5%;
-	padding-right:5%;
+	padding-left: ;
+	padding-right: ;
 	margin-top: 30px;
 	font-size: 20px;
+	  width: 250px;
+  height: 105px;
+  margin-top: 300px;
+  margin-right: 0px;
+  margin-left: 900px;
+  margin-bottom: 0px;
+  background-color: white;
+
+  opacity: .70;
+  position: absolute;
+	z-index: 100;
+	}
+	
 @media all and (max-width:700px){
 	.myP {
 		padding:2%;
@@ -426,7 +432,7 @@ body {
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
                 	{% if user.is_authenticated %}
-                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> <p> | </p> </li>
+                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> | </li>
 					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
 					{% else %}
 					<li><a href="{% url 'users:register' %}">Register</a> | </li>
@@ -447,7 +453,7 @@ body {
     <div style="height: 100px">
         <!-- just to make scrolling effect possible -->
 			<h2 class="myH2" style= "color:lightgray"></h2>
-			<p class="myP" style = "color:gray">“The journey of a thousand miles begins with a single step.”
+			<p class="myP" style = "color:white">“The journey of a thousand miles begins with a single step.”
 <br>― Lao Tzu</p>
 			<p class="myP"></p>
 			<p class="myP"></p>
@@ -480,3 +486,18 @@ body {
 
 });
     </script>
+
+{% block content %}
+
+<form method="post" action="{% url 'users:register' %}">
+	{% csrf_token %}
+	{% bootstrap_form form %}
+
+
+	{% buttons %}
+	<button name='submit' class='btn btn-primary'>Register</button>
+	{% endbuttons %}
+	<input type="hidden" name='next' value="{% url 'learning_logs:index' %}"/>
+	
+</form>
+{% endblock content %}
