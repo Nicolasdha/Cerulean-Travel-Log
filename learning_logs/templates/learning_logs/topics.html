@@ -382,6 +382,7 @@ body {
   padding-right: ;
   z-index: 1;
   position: relative;
+
 }
 
 .insideHome{
@@ -425,10 +426,12 @@ body {
     padding-left: %;
     padding-top: 0%;
     position: relative;
+
 }
 
 .topic {
     font-size: 2.6rem;
+
 }
 
 ::-webkit-scrollbar {
@@ -606,14 +609,14 @@ body {
 
 {% block content %}
 
-<div class="list">
+<div class="list" >
 <p>
 
 	{% for topic in topics %}
 
 		<li>
 
-			<a href="{% url 'learning_logs:topic' topic.id %}"> &#10147; {{topic}}</a>
+			<a  href="{% url 'learning_logs:topic' topic.id %}"> &#10147; {{topic}}</a>
 
 		</li>
 
