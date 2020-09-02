@@ -515,9 +515,76 @@ body {
 }
 
 
+@media screen and (max-width: 500px){
+    .insideHome {
+        padding-top: 1%;
+        padding-left: 2%;
+        color: #00a9ea;
+        list-style: none;
+        font-size: 2.3rem;
+        position: relative;
+        font-weight: ;
+    }
+
+    .divScroll {
+        overflow:scroll;
+        margin-top: 2%;
+        margin-left: 3%;
+        height:50vh;
+        width:75.6vw;
+        padding-right: 1%;
+        padding-left: %;
+        padding-top: %;
+        position: relative;
+    }
+    .home a{
+        color:#00a9ea;
+    }
+
+    .home a:hover {
+        color:#007ba7;
+    }
+
+    .home {
+        background-image: url(https://i.ibb.co/2d4DvLC/jonathan-gallegos-v-A2q0-Nro-U-unsplash.jpg);
+         background-position: -300px 0px ;
+        background-repeat: no-repeat;
+    }
+
+    .transbox {
+      background-color: #fff;
+      opacity: .8;
+      left: 10%;
+      right:;
+      top: 22% ;
+      height: 52vh;
+      width: 80vw;
+      border-radius: ;
+      padding-right: ;
+      z-index: 1;
+    }
+
+    .topic {
+        font-size: 3rem;
+        line-height: 7vh;
+        margin-right: 5%;
+        padding-right: 5%;
+        text-align: center;
+    }
+
+    .quote {
+        color:gray;
+        font-size: 20px;
+        text-align: center;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
 
 
-@media screen and (max-width: 800px) and (min-width: 700px){
+@media screen and (max-width: 800px) and (min-width: 701px){
     .divScroll {
         overflow:scroll;
         margin-top: 1%;
@@ -546,7 +613,7 @@ body {
 }
 
 
-@media screen and (max-width: 1100px) and (min-width: 800px){
+@media screen and (max-width: 1100px) and (min-width: 801px){
     .insideHome {
         padding-top: %;
         font-size: 2rem;
@@ -609,14 +676,14 @@ body {
 
 {% block content %}
 
-<div class="list" >
+<div class="list">
 <p>
 
 	{% for topic in topics %}
 
 		<li>
 
-			<a  href="{% url 'learning_logs:topic' topic.id %}"> &#10147; {{topic}}</a>
+			<a href="{% url 'learning_logs:topic' topic.id %}"> &#10147; {{topic}}</a>
 
 		</li>
 
