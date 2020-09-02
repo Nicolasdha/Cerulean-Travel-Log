@@ -139,7 +139,7 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 50vw;
+        width: 70vw;
         height: 20vh;
         right: ;
         left: ;
@@ -156,7 +156,7 @@ body {
 
     .nav div.main_list ul li a {
         text-align: center;
-        width: 35%;
+        width: 55%;
         font-size: 2.4rem;
         padding: 0px;
         color: black;
@@ -408,6 +408,17 @@ div.insideTrans {
 	color: black;
 	text-align: left;
 }
+.transbox a {
+  font-weight: ;
+  color:black;
+}
+
+.transbox a:hover {
+  font-weight: bold;
+  color:#0f390f;
+  font-size: 3.5rem;
+   text-decoration: none;
+}
 
 @media screen and (max-width: 768px){
 	div.transbox {
@@ -415,15 +426,40 @@ div.insideTrans {
 	  background-color: transparent;
 	  opacity: 0.75;
 	  left: 0vw;
-	  padding-left: 10%;
+	  padding-left: 5%;
 	  top: 14%;
 	  bottom: 0;
-	  height: 580px;
 	  position: relative;
-	  width: 110%;
+	  width: 100%;
 	  border-radius: 25px;
+         padding-right: 6%;
+
     }
-}	
+}	    
+
+@media screen and (max-width: 500px){
+    div.transbox {
+      margin: 0px;
+      background-color: transparent;
+      opacity: 0.75;
+      left: 0vw;
+      padding-left: 5%;
+      top: 14%;
+      bottom: 0;
+      position: relative;
+      width: 100%;
+      border-radius: 25px;
+      padding-right: 6%;
+    } 
+    .transbox a {
+  font-weight: ;
+  color:forestgreen;
+  text-decoration: underline;
+
+}
+}
+
+
 
 .quote {
 	text-align: center;
@@ -435,17 +471,7 @@ div.insideTrans {
 	color: gray;
 }
 
-.transbox a {
-  font-weight: bold;
-  color:black;
-}
 
-.transbox a:hover {
-  font-weight: bold;
-  color:#0f390f;
-  font-size: 3.5rem;
-   text-decoration: none;
-}
 
 ::-webkit-scrollbar {
     width: 10px;
