@@ -140,7 +140,7 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 50vw;
+        width: 70vw;
         height: 20vh;
         right: ;
         left: ;
@@ -158,7 +158,7 @@ body {
 
     .nav div.main_list ul li a {
         text-align: center;
-        width: 35%;
+        width: 55%;
         font-size: 2.4rem;
         padding: 0px;
         color: white ;
@@ -379,7 +379,6 @@ div.transbox {
   position: relative;
   width: 50%;
   border-radius: 25px;
-  padding-right: 20%;
 }
 
 div.insideTrans {
@@ -387,7 +386,7 @@ div.insideTrans {
 	padding-bottom: 10%;
 	padding-top: 2%;
 	padding-left: 2%;
-	padding-right: 2%;
+	padding-right: 30%;
 }
 
 @media screen and (max-width: 500px){
@@ -413,11 +412,25 @@ div.insideTrans {
         background-size: cover ;
         background-repeat: no-repeat;
     }
+    div.insideTrans {
+    color: white;
+}
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 900px){
     div.transbox {
     padding-right: 9%;
+    }
+    div.insideTrans {
+    padding-right: 0%;
+    }
+}
+@media screen and (max-width: 899px) and (min-width:500px){
+    div.transbox {
+    padding-right: 1%;
+    }
+     div.insideTrans {
+    padding-right: 0%;
     }
 }
 
