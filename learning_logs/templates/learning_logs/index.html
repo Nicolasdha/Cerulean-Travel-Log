@@ -150,7 +150,7 @@ body {
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-        color: transparent;
+        color: black;
     }
 
     .nav div.main_list ul li a {
@@ -376,6 +376,17 @@ body {
     background: #56565a;
 }
 
+.location {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2.5rem;
+    opacity: .8;
+}
+
+
 </style>
 
 <!------ HTML SECTION ------>
@@ -422,15 +433,22 @@ body {
 </nav>
 
 <section class="home">
+    <div class="location">
+    <p>
+        <big>[</big> Lago di Braies, Italy  <big>]</big>
+    </p>
+</div>
 </section>
 
-<div>
-	<p style="text-align:center;padding:15;font-size: 2rem;color:gray;" >
-		“The journey of a thousand miles begins with a single step.” <br>― Lao Tzu
-	</p>
-</div>
-
-
+<section style="text-align:center;padding:15;font-size: 2rem;color:gray;">
+    <div id="content-1">“The journey is part of the experience - an expression of the seriousness of one's intent.” <br>― Anthony Bourdain</div>
+    <div id="content-2">“The journey of a thousand miles begins with a single step.” <br>― Lao Tzu</div>
+    <div id="content-3">“I heard an airplane passing overhead. I wished I was on it.” <br> ― Charles Bukowski</div>
+    <div id="content-4">“Every hundred feet the world changes”<br> ― Roberto Bolaño</div>
+    <div id="content-5">“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.” <br>― Marcel Proust</div>
+    <div id="content-6">“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br> ― Mark Twain</div>
+    <div id="content-7">“I heard an airplane passing overhead. I wished I was on it.” <br> ― Charles Bukowski</div></div>
+</section>
 </body>
 </html>
 {% endblock content %}
@@ -460,4 +478,16 @@ body {
   
 
 });
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
+
     </script>

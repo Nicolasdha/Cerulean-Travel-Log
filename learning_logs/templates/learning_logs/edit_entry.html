@@ -151,7 +151,7 @@ body {
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-         color: transparent;
+         color: inherit;
     }
 
     .nav div.main_list ul li a {
@@ -386,7 +386,7 @@ div.transbox {
   height: ;
   border-radius: 25px;
   padding-right: 10%;
-  text-align: center;
+  text-align: left;
   color: black;
 }
 
@@ -470,7 +470,15 @@ div.insideTrans {
 	color: gray;
 }
 
-
+.location {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    opacity: .8;
+}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -552,7 +560,13 @@ div.insideTrans {
 
 
   </div>
+ 
     </section>
+ <div class="location">
+    <p>
+        <big>[ </big>Tibet, China<big> ]</big>
+    </p>
+</div>
   <div class="quote">
   	<p> 
   		“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.” <br>― Marcel Proust

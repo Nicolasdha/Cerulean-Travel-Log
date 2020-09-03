@@ -151,7 +151,7 @@ body {
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-         color: transparent;
+         color: #007ba7;
     }
 
     .nav div.main_list ul li a {
@@ -620,6 +620,15 @@ body {
     }
 }
 
+.location {
+    color: gray;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    
+}
 
 </style>
 
@@ -699,7 +708,13 @@ body {
 </div>
 </div>
 
+<div class="location">
+    <p>
+        <big>[ </big>Mykonos, Greece<big> ]</big>
+    </p>
+</div>
     	</section>
+        }
 
 </p>
 
@@ -741,7 +756,5 @@ body {
     console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-  
-
 });
     </script>
