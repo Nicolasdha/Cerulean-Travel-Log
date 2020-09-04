@@ -10,7 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> New Entry </title>
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - Edit Entry </title>
 
 
     </head>
@@ -37,7 +39,7 @@ body {
     line-height: 50px;
     text-align: center;
     font-size: 3.6rem;
-    color: forestgreen ;
+    color: white ;
     z-index: 100
 }
 
@@ -50,12 +52,12 @@ body {
 }
 
 .nav div.logo a {
-    color: forestgreen ;
+    color: white ;
     font-size: 3.6rem;
 }
 
 .nav div.logo a:hover {
-    color: white;
+    color: forestgreen;
      text-decoration: none;
 }
 
@@ -72,16 +74,16 @@ body {
 .nav div.main_list ul li {
     padding-left: 10px;
     font-size: 2.4rem;
-    color: forestgreen;
+    color: white;
     opacity: .7;
 }
 
 .nav div.main_list ul li a {
-    color: forestgreen;
+    color: white;
 }
 
 .nav div.main_list ul li a:hover {
-    color: white;
+    color: forestgreen;
      text-decoration: none;
 }
 
@@ -129,7 +131,7 @@ body {
         width: 100%;
         height: 0;
         overflow: hidden;
-        opacity: 1;
+        opacity: .8;
     }
 
     .nav div.show_list {
@@ -139,8 +141,8 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 70vw;
-        height: 20vh;
+        width: 235px;
+        height: ;
         right: ;
         left: ;
         bottom:;
@@ -151,7 +153,7 @@ body {
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-         color: inherit;
+         color: black;
     }
 
     .nav div.main_list ul li a {
@@ -360,6 +362,23 @@ body {
     }
 }
 
+.prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: white;
+        background-position: center left;
+        opacity: 1;
+    }
+
+
+.sffix.nav div.main_list ul li a {
+        color: white;
+    }
+
 .affix {
     padding: 0;
     background-color: #303030;}
@@ -432,11 +451,13 @@ div.insideTrans {
 	  width: 100%;
 	  border-radius: 25px;
          padding-right: 6%;
-
+    }
+      div.location {
+        display: none;
     }
 }	    
 
-@media screen and (max-width: 499px){
+@media screen and (max-width: 500px){
     div.transbox {
       margin: 0px;
       background-color: transparent;
@@ -454,16 +475,18 @@ div.insideTrans {
   font-weight: ;
   color:black;
   text-decoration: underline;
-
-}
+    }
+    div.location {
+        display: none;
+    }
 }
 
 
 
 .quote {
 	text-align: center;
-	padding-left: 15vw ;
-	padding-right: 15vw;
+	padding-left: 7vw ;
+	padding-right: 7vw;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 20px;
@@ -567,11 +590,17 @@ div.insideTrans {
         <big>[ </big>Tibet, China<big> ]</big>
     </p>
 </div>
-  <div class="quote">
-  	<p> 
-  		“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.” <br>― Marcel Proust
-	</p>
-	</div>
+
+<section class="quote">
+<div class="quote">
+    <div id="content-1">“Never hesitate to go far away, beyond all seas, all frontiers, all countries, all beliefs.”<br>― Amin Maalouf</div>
+    <div id="content-2">“One must travel, to learn. Every day, now, old Scriptural phrases that never possessed any significance for me before, take to themselves a meaning.” <br>― Mark Twain</div>
+    <div id="content-3">
+“We live in a wonderful world that is full of beauty, charm and adventure. There is no end to the adventures we can have if only we seek them with our eyes open.”
+<br> ― Jawaharlal Nehru</div>
+    <div id="content-4">“But the beauty is in the walking -- we are betrayed by destinations.”<br> ― Gwyn Thomas</div>
+    <div id="content-5">“There's a part of me that thinks perhaps we go on existing in a place even after we've left it.”<br>― Colum McCann</div>
+</section>
 
 </body>
 </html>
@@ -587,11 +616,11 @@ div.insideTrans {
 <!-- Function used to display drop down menu-->
     <script>
         $(window).scroll(function() {
-            if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+            if ($(document).scrollTop() > 45) {
+                $('.nav').addClass('prefix + affix + suffix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('prefix + affix + suffix');
             }
         });
         
@@ -600,7 +629,16 @@ div.insideTrans {
     console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-  
-
 });
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
     </script>

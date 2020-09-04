@@ -10,7 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Log In </title>
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - Log In </title>
 
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   
@@ -148,8 +150,8 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 70vw;
-        height: 20vh;
+        width: 235px;
+        height: ;
         right: ;
         left: ;
         bottom:;
@@ -375,6 +377,18 @@ body {
     }
 }
 
+.prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 200px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: gray;
+        background-position: center left;
+        opacity: .8;
+    }
+
 .affix {
     padding: 0;
     background-color: #303030;
@@ -412,8 +426,8 @@ body {
 
 .quote {
     text-align: center;
-    padding-left: 15vw ;
-    padding-right: 15vw ;
+    padding-left: 7vw ;
+    padding-right: 7vw ;
     padding-top: 20px;
     padding-bottom: 20px;
     font-size: 20px;
@@ -517,12 +531,13 @@ body {
 		</div>
     </div>
 
-<div class='quote'>
-	<p>
-	“I am not the same having seen the moon shine on the other side of the world.”
-<br>― Mary Anne Radmacher
-	</p>
-</div>
+<section class="quote">
+<div class="quote">
+    <div id="content-1">“The gladdest moment in human life is a departure into unknown lands.” <br>― Sir Richard Burton</div>
+    <div id="content-2"> “Better to see something once than hear about it a thousand times” <br>― Unknown</div>
+    <div id="content-3">“To Travel is to Live” <br>― Hans Christian Andersen</div>
+    <div id="content-4"> “The most beautiful in the world is, of course, the world itself.”<br> ― Wallace Stevens</div>
+</section>
 
 {% endblock content %}
 
@@ -538,10 +553,10 @@ body {
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+                $('.nav').addClass('affix + prefix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('affix +prefix');
             }
         });
         
@@ -551,4 +566,15 @@ body {
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
     </script>

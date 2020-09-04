@@ -10,7 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> New Topic </title>
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - New Location </title>
 
 
     </head>
@@ -140,8 +142,8 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 70vw;
-        height: 20vh;
+        width: 235px;
+        height: ;
         right: ;
         left: ;
         bottom:;
@@ -363,6 +365,18 @@ body {
     }
 }
 
+.prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: black;
+        background-position: center left;
+        opacity: .8;
+    }
+
 .affix {
     padding: 0;
     background-color: #111;
@@ -415,6 +429,9 @@ div.insideTrans {
     div.insideTrans {
     color: white;
 }
+  div.location {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 900px){
@@ -432,14 +449,17 @@ div.insideTrans {
      div.insideTrans {
     padding-right: 0%;
     }
+      div.location {
+        display: none;
+    }
 }
 
 
 
 .quote {
     text-align: center;
-    padding-left: 15vw ;
-    padding-right: 15vw ;
+    padding-left: 7vw ;
+    padding-right: 7vw ;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 20px;
@@ -522,18 +542,19 @@ div.insideTrans {
     </section>
 <section>
     <div class="location">
-    <p>
         <big>[ </big>Hvolsvöllur, Iceland<big> ]</big>
-    </p>
 </section>
 
 
+<section class="quote">
 <div class="quote">
-
-	<p>
-		“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br> ― Mark Twain
-	</p>
-</div>
+    <div id="content-1">“Traveling outgrows its motives. It soon proves sufficient in itself. You think you are making a trip, but soon it is making you - or unmaking you.”<br>― Nicolas Bouvier</div>
+    <div id="content-2">“Ships are my arrows, the sea my bow, the world my target.”<br>― Robert Thier</div>
+    <div id="content-3">“Tourists went on holidays while travellers did something else. They travelled.”
+<br> ― Alex Garland</div>
+    <div id="content-4">“I think one travels more usefully when they travel alone, because they reflect more."<br> ― Thomas Jefferson</div>
+    <div id="content-5">“The saddest journey in the world is the one that follows a precise itinerary. Then you're not a traveler.”<br>― Guillermo del Toro</div>
+</section>
 
 
 </body>
@@ -550,19 +571,30 @@ div.insideTrans {
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+                $('.nav').addClass('prefix + affix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('prefix + affix');
             }
         });
+
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
     console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-  
-
 });
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
+
     </script>

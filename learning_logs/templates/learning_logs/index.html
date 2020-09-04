@@ -10,6 +10,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
         <title> Travel Log - Home Page</title>
 
 
@@ -138,8 +140,8 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 70vw;
-        height: 20vh;
+        width: 235px;
+        height: ;
         right: ;
         left: ;
         bottom:;
@@ -147,10 +149,11 @@ body {
         background-position: center left;
     }
 
+
     .nav div.main_list ul li {
         width: 100%;
         text-align: left;
-        color: black;
+        color: gray;
     }
 
     .nav div.main_list ul li a {
@@ -158,7 +161,7 @@ body {
         width: 55%;
         font-size: 2.4rem;
         padding: 0px;
-        color: black;
+        color: gray;
         font-weight: 450;
     }
 
@@ -362,6 +365,18 @@ body {
     background-color: #111;
 }
 
+.prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: black;
+        background-position: center left;
+        color: gray;
+        opacity: .7;
+    }}
 
 .quote{}
 
@@ -386,6 +401,53 @@ body {
     opacity: .8;
 }
 
+
+
+
+
+
+
+
+    /*.nav div.main_list ul {
+        flex-direction: column;
+        width: 46vw;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: transparent;
+        background-position: center left;
+    }
+
+    .nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 46vw;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: red;
+        background-position: center left;
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    .location {
+    display: none;
+    }
 
 </style>
 
@@ -434,20 +496,17 @@ body {
 
 <section class="home">
     <div class="location">
-    <p>
         <big>[</big> Lago di Braies, Italy  <big>]</big>
-    </p>
 </div>
 </section>
 
 <section style="text-align:center;padding:15;font-size: 2rem;color:gray;">
-    <div id="content-1">“The journey is part of the experience - an expression of the seriousness of one's intent.” <br>― Anthony Bourdain</div>
-    <div id="content-2">“The journey of a thousand miles begins with a single step.” <br>― Lao Tzu</div>
-    <div id="content-3">“I heard an airplane passing overhead. I wished I was on it.” <br> ― Charles Bukowski</div>
-    <div id="content-4">“Every hundred feet the world changes”<br> ― Roberto Bolaño</div>
-    <div id="content-5">“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.” <br>― Marcel Proust</div>
-    <div id="content-6">“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br> ― Mark Twain</div>
-    <div id="content-7">“I heard an airplane passing overhead. I wished I was on it.” <br> ― Charles Bukowski</div></div>
+    <div id="content-1">“The journey is part of the experience - an expression of the seriousness of one's intent.”<br>― Anthony Bourdain</div>
+    <div id="content-2">“The journey of a thousand miles begins with a single step.”<br>― Lao Tzu</div>
+    <div id="content-3">“I heard an airplane passing overhead. I wished I was on it.”<br>― Charles Bukowski</div>
+    <div id="content-4">“Every hundred feet the world changes”<br>― Roberto Bolaño</div>
+    <div id="content-5">“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.”<br>― Marcel Proust</div>
+    <div id="content-6">“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br>― Mark Twain</div>
 </section>
 </body>
 </html>
@@ -463,10 +522,10 @@ body {
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+                $('.nav').addClass('prefix + affix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('prefix + affix');
             }
         });
         

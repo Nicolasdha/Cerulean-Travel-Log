@@ -10,7 +10,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> New Entry </title>
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - New Entry </title>
 
 
     </head>
@@ -141,8 +143,8 @@ body {
 
     .nav div.main_list ul {
         flex-direction: column;
-        width: 70vw;
-        height: 20vh;
+        width: 235px;
+        height: ;
         right: ;
         left: ;
         bottom:;
@@ -362,6 +364,17 @@ body {
     }
 }
 
+.prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: black;
+        background-position: center left;
+        opacity: .8;
+    }
 .affix {
     padding: 0;
     background-color: black;}
@@ -433,12 +446,12 @@ div.insideTrans {
 	  border-radius: 25px;
         padding-right: 6%;
     } 
-
- 
-    
+    div.location {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 499px){
+@media screen and (max-width: 500px){
     div.transbox {
       margin: 0px;
       background-color: transparent;
@@ -463,13 +476,16 @@ div.insideTrans {
       color:#9a0026;
       font-size: 3rem;
     }
+    div.location {
+        display: none;
+    }
 }
 
 
 .quote{
 	text-align: center;
-	padding-left: 15vw ;
-	padding-right: 15vw;
+	padding-left: 7vw ;
+	padding-right: 7vw;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	font-size: 20px;
@@ -550,7 +566,7 @@ div.insideTrans {
 		<a href = "{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
 	</h2>
 	<h2>
-		Add entry:
+		Add Entry:
 	</h2>
 <div class="insideTrans">
  
@@ -571,16 +587,18 @@ div.insideTrans {
   </div>
  </section>
 <div class="location">
-    <p>
         <big>[ </big>Seoul, South Korea<big> ]</big>
-    </p>
 </div>
    
-  <div class="quote">
-  	<p> 
-  		“Every hundred feet the world changes”<br> ― Roberto Bolaño
-	</p>
-	</div>
+
+<section class="quote">
+<div class="quote">
+    <div id="content-1">“The journey itself is my home.”<br>― Matsuo Basho</div>
+    <div id="content-2">“Some beautiful paths can't be discovered without getting lost.” <br>― Erol Ozan</div>
+    <div id="content-3">“I wandered everywhere, through cities and countries wide. And everywhere I went, the world was on my side.”<br> ― Roman Payn</div>
+    <div id="content-4">“Wherever you go, you take yourself with you.”<br> ― Neil Gaiman</div>
+    <div id="content-5">“Make voyages. Attempt them. There's nothing else.”<br>― Tennessee Williams</div>
+</section>
 
 </body>
 </html>
@@ -597,19 +615,29 @@ div.insideTrans {
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+                $('.nav').addClass('prefix + affix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('prefix + affix');
             }
         });
+
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
     console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
-  
-
 });
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
     </script>
