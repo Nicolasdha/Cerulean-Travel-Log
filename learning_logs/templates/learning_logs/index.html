@@ -367,15 +367,16 @@ body {
 
 .prefix.nav div.main_list ul:hover {
         flex-direction: column;
-        width: 200px;
+        width: 235px;
         height: 6vh;
         right: ;
-        left: ;
+        padding-left:; ;
         bottom:;
         background-color: black;
         background-position: center left;
         color: gray;
         opacity: .7;
+        font-size: 1rem;
     }}
 
 .quote{}
@@ -437,7 +438,7 @@ body {
 
 					{% else %}
 
-					<li><a href="{% url 'users:register' %}">Register</a> | <a href="{% url 'users:login' %}" >Log In</a></li>
+					<li><a href="{% url 'users:register' %}">&nbsp;Register</a>&nbsp;&nbsp;|<a href="{% url 'users:login' %}" > &nbsp;Log In</a></li>
 
 					<!--<li><a href="{% url 'users:login' %}" >Log In</a></li>-->
 
