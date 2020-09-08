@@ -7,7 +7,7 @@
 
 
 # Travel Log - Introduction
-Hello! After travelling to many different countries, and participating in a great deal of different activities I began to lement the memories of the moments I have lost as I grew older. I created this website so people would be able to keep track of the places they have been, the things they have seen or done, and even to help plan for the future.
+Hello! After travelling to many different countries, and participating in a great deal of different activities I began to lement the memories of the moments I have lost as I grew older. I created this website so people would be able to keep track of the places they have been, the things they have seen or done, and to even to help plan for future endeavors.
 
 
 ## Table of Contents
@@ -50,7 +50,7 @@ This website's structure is quite simple to maintain ease of use. The entries ar
 > 2) Create a location<br><br>
 > 3) Start creating entries associated with that location (editing them as needed)
 
-Please feel free to use this website as much as you would like.<br><br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
+Please feel free to use this website as much as you would like for your personal use.<br><br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
 The ability to delete entries and locations has been held back from users to maintain the example profile's integrity. <br> <br>
 If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br>
 
