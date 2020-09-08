@@ -55,4 +55,4 @@ The ability to delete entries and locations has been held back from users to mai
 If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br><br>
 
 Thank you for visiting!
-
+![Logo](https://i.ibb.co/nr2trL4/Screen-Shot-2020-09-08-at-4-20-44-PM.png)
