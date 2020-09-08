@@ -17,7 +17,7 @@ Hello! After travelling to many different countries, and participating in tons o
 
   
 ### Technologies
-I created this app using the following technologies:
+This website was created using the following technologies:
 
 |   Frontend   |    Backend     |
 | :----------- | :------------: |
