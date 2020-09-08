@@ -45,8 +45,8 @@ This website's structure is quite simple to maintain ease of use. The entries ar
 *Steps to use:*
 
 > 1) Register an account or use the following credentials:<br>
-  Username: User<br> 
-  Password: Password1 <br><br>
+  **Username: User<br> 
+  Password: Password1 <br><br>**
 > 2) Create a location<br><br>
 > 3) Start creating entries associated with that location (editing them as needed)
 
