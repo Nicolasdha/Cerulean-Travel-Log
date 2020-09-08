@@ -1,12 +1,20 @@
+![Logo](https://i.ibb.co/y4wbWLd/Screen-Shot-2020-09-08-at-3-47-29-PM.png)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![ForTheBadge uses-html](http://ForTheBadge.com/images/badges/uses-html.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-css](http://ForTheBadge.com/images/badges/uses-css.svg)](http://ForTheBadge.com)
+[![ForTheBadge uses-js](http://ForTheBadge.com/images/badges/uses-js.svg)](http://ForTheBadge.com)
+
+
+
 # Travel Log - Introduction
-Hello! After travelling to many different countries, and participating in tons of different activities, I began to lement forgetting the small off-hand moments that made life so special. I created this website so people would be able to keep track of the places they have been, the things they have done, and even places they are  planning to go.
+Hello! After travelling to many different countries, and participating in tons of different activities, I began to lement all of the moments that I have lost as I grew older. I created this website so people would be able to keep track of the places they have been, the things they have seen or done, and even to help plan for the future
 
 
 ## Table of Contents
   * Technologies
   * Launch
   * Structure
-  * Setup
+
   
 ### Technologies
 I created this app using the following technologies:
@@ -27,8 +35,8 @@ Please visit - <a href="http://cerulean-travel-log.herokuapp.com/" target="_blan
 to use the website.
 
 You can either:
-* Register your own Username/Password to start on a clean slate
-* Use the following credentials to view the website with prepopulated data to understand the bredth of it <br> Username: User   Password: Password1
+* Register your own Username/Password to start on a clean slate<br><br>
+* Use the credentials below to view the website with prepopulated data
 
 ### Structure
 
@@ -36,10 +44,15 @@ This website's structure is quite simple for ease of use. The entries are timest
 
 Steps to use:
 
-1) Register an account or use the following credentials Username: User   Password: Password1
-2) Create a location
-3) Start creating new entries associated with that location (edit them as needed)
+1) Register an account or use the following credentials:<br>
+  Username: User<br> 
+  Password: Password1 <br><br>
+2) Create a location<br><br>
+3) Start creating entries associated with that location (editing them as needed)
 
-The admin can delete the entries and locations, this was kept back from users to maintain the example profile's integrety. <br>
-Please feel free to add, or edit any entry as desired. If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>
+Please feel free to use this website as much as you would like.<br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
+The ability to delete entries and locations has been held back from users to maintain the example profile's integrity. <br>
+If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br><br>
+
+Thank you for visiting!
 
