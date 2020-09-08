@@ -118,7 +118,7 @@ body {
 
 /* Media qurey section */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 400px) and (max-width: 1024px) {
     .container {
         margin: 0;
     }
@@ -131,6 +131,7 @@ body {
     }
     .nav div.logo {
         margin-left: 0px;
+        padding-left: 0px;
 
     }
 
@@ -156,7 +157,6 @@ body {
         left: ;
         bottom:;
         background-color: transparent;
-        /*same background color of navbar*/
         background-position: center left;
 
 
@@ -384,7 +384,7 @@ body {
         right: ;
         left: ;
         bottom:;
-        background-color: gray;
+        background-color: #303030;
         background-position: center left;
         opacity: .8;
     }
@@ -471,7 +471,7 @@ body {
 <nav class="nav">
         <div class="container">
             <div class="logo">
-                <a href="{% url 'learning_logs:index' %}">Travel Log</a>  |
+                <a href="{% url 'Travel_Logs:index' %}">Travel Log</a>  |
 
             </div>
             <div id="mainListDiv" class="main_list">
@@ -480,7 +480,7 @@ body {
 
                 	{% if user.is_authenticated %}
 
-                	<li><a href="{% url 'learning_logs:topics' %}">Topics</a> | </li>
+                	<li><a href="{% url 'Travel_Logs:locations' %}">Locations</a> | </li>
 
 					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
 
@@ -524,7 +524,7 @@ body {
 					<button name='submit' class="btn btn-primary">log in</button>
 					{% endbuttons %}
 
-					<input type = 'hidden' name='next' value="{% url 'learning_logs:index' %}">
+					<input type = 'hidden' name='next' value="{% url 'Travel_Logs:index' %}">
 				</form>
             </div>
 			</div>
