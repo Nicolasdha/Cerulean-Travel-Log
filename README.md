@@ -32,7 +32,7 @@ This website was created using the following technologies:
 
 This website is hosted on Heroku's Paas Cloud Platform. <br><br>
 Please visit - <a href="http://cerulean-travel-log.herokuapp.com/" target="_blank"> http://Cerulean-Travel-Log.HerokuApp.com/ </a>
-to use the website.
+to use the website. Feel free to use this website on all mobile devices as well, it is completly optimized for all devices and desktop sizes.
 
 *You can either:*
 > * Register your own Username/Password to start on a clean slate<br><br>
