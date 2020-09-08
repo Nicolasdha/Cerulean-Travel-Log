@@ -7,7 +7,7 @@
 
 
 # Travel Log - Introduction
-Hello! After travelling to many different countries, and participating in tons of different activities, I began to lement the memories of the moments I have lost as I grew older. I created this website so people would be able to keep track of the places they have been, the things they have seen or done, and even to help plan for the future
+Hello! After travelling to many different countries, and participating in a great deal of different activities I began to lement the memories of the moments I have lost as I grew older. I created this website so people would be able to keep track of the places they have been, the things they have seen or done, and even to help plan for the future.
 
 
 ## Table of Contents
