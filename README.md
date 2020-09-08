@@ -40,7 +40,7 @@ to use the website.
 
 ### Structure
 
-This website's structure is quite simple for ease of use. The entries are timestamped, and ordered thusly. With the most recent appearing on the top.
+This website's structure is quite simple to maintain ease of use. The entries are timestamped, and ordered thusly. With the most recent appearing on the top.
 
 *Steps to use:*
 
@@ -50,8 +50,8 @@ This website's structure is quite simple for ease of use. The entries are timest
 > 2) Create a location<br><br>
 > 3) Start creating entries associated with that location (editing them as needed)
 
-Please feel free to use this website as much as you would like.<br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
-The ability to delete entries and locations has been held back from users to maintain the example profile's integrity. <br>
+Please feel free to use this website as much as you would like.<br><br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
+The ability to delete entries and locations has been held back from users to maintain the example profile's integrity. <br> <br>
 If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br><br>
 
 Thank you for visiting!
