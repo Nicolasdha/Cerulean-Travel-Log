@@ -11,9 +11,9 @@ Hello! After travelling to many different countries, and participating in a grea
 
 
 ## Table of Contents
-  * Technologies
-  * Launch
-  * Structure
+  * <a href= https://github.com/Nicoasdha/Cerulean-Travel-Log#Technologies> Technologies </a>
+  * <a href= https://github.com/Nicoasdha/Cerulean-Travel-Log#Technologies>Launch</a>
+  * <a href= https://github.com/Nicoasdha/Cerulean-Travel-Log#Technologies> Structure</a>
 
   
 ### Technologies
