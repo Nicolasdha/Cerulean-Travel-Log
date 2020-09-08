@@ -1,0 +1,645 @@
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<! DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - New Entry </title>
+
+
+    </head>
+
+  <!------- CSS SECTION ------>
+
+    <style> 
+          
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    line-height: 50px;
+    text-align: center;
+    font-size: 3.6rem;
+    color: white ;
+    z-index: 100
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    margin-left: 32%;
+    opacity: .7;
+}
+
+.nav div.logo a {
+    color: white ;
+    font-size: 3.6rem;
+}
+
+.nav div.logo a:hover {
+    color: #9a0026;
+    text-decoration: none;
+}
+
+.nav div.main_list {
+    float: left;
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    padding-left: 10px;
+    font-size: 2.4rem;
+    color: white;
+    opacity: .7;
+}
+
+.nav div.main_list ul li a {
+    color: white;
+}
+
+.nav div.main_list ul li a:hover {
+    color: #9a0026;
+    text-decoration: none;
+}
+
+
+/* Home section */
+
+.home {
+	height: 100vh;
+	width: 100%;
+    background-image: url(https://i.ibb.co/JB3TkKy/saveliy-bobov-e-Va2-FK83-K6w-unsplash.jpg);
+    background-position: center bottom;
+	background-size: cover;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+
+    .nav div.logo {
+        margin-left: 0px;
+    }
+
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        opacity: 1;
+    }
+
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 235px;
+        height: ;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: transparent;
+        background-position: center left;
+    }
+
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: left;
+         color: #9a0026;
+    }
+
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 45%;
+        font-size: 2.4rem;
+        padding: 0px;
+        color: white;
+        font-weight: 450;
+    }
+
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .prefix.nav div.main_list ul:hover {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        right: ;
+        left: ;
+        bottom:;
+        background-color: black;
+        background-position: center left;
+        opacity: .8;
+    }
+}
+.affix {
+    padding: 0;
+    background-color: black;}
+}
+	
+@media all and (max-width:700px){
+	.myP {
+		padding:2%;
+	}
+}
+
+div.transbox {
+  margin: 0px;
+  background-color: transparent;
+  opacity: 0.75;
+  left: 8%;
+  padding-left:10% ;
+  padding-top: 1%;
+  top: 15%;
+  bottom: 0;
+  position: relative;
+  width: 80%;
+  height: ;
+  border-radius: 25px;
+  padding-right: 7%;
+  text-align: left;
+  color: white;
+}
+
+div.transbox p {
+  margin: 5%;
+  margin-left: 0px;
+  color: #000000;
+  padding-bottom: 10%;
+}
+
+.transbox a {
+  font-weight: bold;
+  color:white;
+}
+
+.transbox a:hover {
+  font-weight: bold;
+  color:#9a0026;
+  font-size: 3rem;
+  
+}
+
+div.insideTrans {
+	padding-bottom: ;
+	padding-top: ;
+	padding-left: ;
+	padding-right: ;
+	color: black;
+	text-align: left;
+}
+
+@media screen and (max-width: 768px){
+	div.transbox {
+	  margin: 0px;
+	  background-color: transparent;
+	  opacity: 0.75;
+	  left: 0vw;
+	  padding-left: 5%;
+	  top: 14%;
+	  bottom: 0;
+	  position: relative;
+	  width: 100%;
+	  border-radius: 25px;
+        padding-right: 6%;
+    } 
+    div.location {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px){
+    div.transbox {
+      margin: 0px;
+      background-color: transparent;
+      opacity: 0.75;
+      left: 0vw;
+      padding-left: 5%;
+      top: 14%;
+      bottom: 0;
+      position: relative;
+      width: 100%;
+      border-radius: 25px;
+      padding-right: 6%;
+    } 
+
+    .transbox a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+.transbox a:hover {
+      font-weight: bold;
+      color:#9a0026;
+      font-size: 3rem;
+    }
+    div.location {
+        display: none;
+    }
+}
+
+
+.quote{
+	text-align: center;
+	padding-left: 7vw ;
+	padding-right: 7vw;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: gray;
+}
+
+.location {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 3rem;
+    opacity: .8;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #800020;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #56565a;
+}
+
+</style>
+
+<!------ HTML SECTION ------>
+
+<body>
+<nav class="nav">
+        <div class="container">
+            <div class="logo">
+
+                <a href="{% url 'Travel_Logs:index' %}">Travel Log</a>  |
+
+            </div>
+            <div id="mainListDiv" class="main_list">
+
+                <ul class="navlinks">
+
+                	{% if user.is_authenticated %}
+
+                	<li><a href="{% url 'Travel_Logs:locations' %}">Locations</a> | <a href="{% url 'users:logout' %}">Log Out</a></li>
+
+					<!--<li><a href="{% url 'users:logout' %}">Log Out</a></li>-->
+
+					{% else %}
+
+					<li><a href="{% url 'users:register' %}">Register</a> | </li>
+
+					<li><a href="{% url 'users:login' %}" >Log In</a></li>
+
+					{% endif %}
+
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+</nav>
+
+{% block content %}
+
+
+<section class="home">
+   
+    <div class="transbox">
+    
+	<h2>
+		<a href = "{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
+	</h2>
+	<h2>
+		Add Entry:
+	</h2>
+<div class="insideTrans">
+ 
+<form action = "{% url 'Travel_Logs:new_entry' location.id %}" method = 'post' class='form'>
+
+	{% csrf_token %}
+
+	{% bootstrap_form form %}
+
+{% buttons %}
+
+	<button name='submit' class='btn btn-primary'>Add Entry</button>
+
+{% endbuttons %}
+
+</form>
+
+  </div>
+ </section>
+<div class="location">
+        <big>[ </big>Seoul, South Korea<big> ]</big>
+</div>
+   
+
+<section class="quote">
+<div class="quote">
+    <div id="content-1">“The journey itself is my home.”<br>― Matsuo Basho</div>
+    <div id="content-2">“Some beautiful paths can't be discovered without getting lost.” <br>― Erol Ozan</div>
+    <div id="content-3">“I wandered everywhere, through cities and countries wide. And everywhere I went, the world was on my side.”<br> ― Roman Payn</div>
+    <div id="content-4">“Wherever you go, you take yourself with you.”<br> ― Neil Gaiman</div>
+    <div id="content-5">“Make voyages. Attempt them. There's nothing else.”<br>― Tennessee Williams</div>
+</section>
+
+</body>
+</html>
+{% endblock content %}
+
+
+
+<!--------------- JAVASCRIPT SECTION ------------>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/scripts.js"></script>
+
+<!-- Function used to display drop down menu-->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('prefix + affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('prefix + affix');
+            }
+        });
+
+        
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+});
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
+    </script>
