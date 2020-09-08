@@ -52,7 +52,7 @@ This website's structure is quite simple to maintain ease of use. The entries ar
 
 Please feel free to use this website as much as you would like.<br><br> You can add locations/entries, as well as, edit any entry as desired.<br><br>
 The ability to delete entries and locations has been held back from users to maintain the example profile's integrity. <br> <br>
-If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br><br>
+If you would like a entry or location deleted, please contact me:<a href="mailto:sankp001@gmail.com"> SanKP001@gmail.com </a>. As the site's admin, I am able to add, delete, and edit anything on the site.<br><br>
 
-Thank you for visiting!
+Thank you for visiting! <br><br><br>
 ![Logo](https://i.ibb.co/nr2trL4/Screen-Shot-2020-09-08-at-4-20-44-PM.png)
