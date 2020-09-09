@@ -369,7 +369,7 @@ body {
 @media screen and (max-width: 768px){
     .prefix.nav div.main_list ul {
         flex-direction: column;
-        width: 205px;
+        width: 235px;
         height: 6vh;
         right: ;
         padding-left: ;
@@ -377,7 +377,7 @@ body {
         background-color: black;
         background-position: center left;
         color: white;
-        opacity: .7;
+        opacity: .9;
         font-size: 1rem;
     }
 }
@@ -439,7 +439,7 @@ body {
 
                 	{% if user.is_authenticated %}
 
-                	   <li style="font-size:2.1rem"><a style="font-size:2.1rem" href="{% url 'Travel_Logs:locations' %}">Locations</a> | <a style="font-size:2.1rem" href="{% url 'users:logout' %}">Log Out</a></li>
+                	   <li ><a href="{% url 'Travel_Logs:locations' %}">Locations</a> | <a href="{% url 'users:logout' %}">Log Out</a></li>
 
                     <!--<li><a href="{% url 'users:logout' %}">Log Out</a></li>-->
 
@@ -475,6 +475,8 @@ body {
     <div id="content-5">“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.”<br>― Marcel Proust</div>
     <div id="content-6">“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br>― Mark Twain</div>
 </section>
+
+
 </body>
 </html>
 {% endblock content %}
