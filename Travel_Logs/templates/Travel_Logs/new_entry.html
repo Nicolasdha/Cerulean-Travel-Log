@@ -50,7 +50,7 @@ body {
     width: auto;
     height: auto;
     margin-left: 32%;
-    opacity: .8;
+    opacity: .7;
 }
 
 .nav div.logo a {
@@ -59,27 +59,25 @@ body {
 }
 
 .nav div.logo a:hover {
-    color: #cc0000;
+    color: #9a0026;
     text-decoration: none;
 }
 
 .nav div.main_list {
     float: left;
-    opacity: 1;
 }
 
 .nav div.main_list ul {
     display: flex;
     list-style: none;
     padding: 0;
-
 }
 
 .nav div.main_list ul li {
     padding-left: 10px;
     font-size: 2.4rem;
     color: white;
-    opacity: .9;
+    opacity: .7;
 }
 
 .nav div.main_list ul li a {
@@ -87,7 +85,7 @@ body {
 }
 
 .nav div.main_list ul li a:hover {
-    color: #cc0000;
+    color: #9a0026;
     text-decoration: none;
 }
 
@@ -98,8 +96,7 @@ body {
 	height: 100vh;
 	width: 100%;
     background-image: url(https://i.ibb.co/JB3TkKy/saveliy-bobov-e-Va2-FK83-K6w-unsplash.jpg);
-    background-position: center 
-    ;
+    background-position: center bottom;
 	background-size: cover;
 }
 
@@ -368,7 +365,7 @@ body {
 }
 
 @media screen and (max-width: 768px){
-    .prefix.nav div.main_list ul {
+    .prefix.nav div.main_list ul:hover {
         flex-direction: column;
         width: 235px;
         height: 6vh;
@@ -407,7 +404,6 @@ div.transbox {
   padding-right: 7%;
   text-align: left;
   color: white;
-
 }
 
 div.transbox p {
@@ -415,7 +411,6 @@ div.transbox p {
   margin-left: 0px;
   color: #000000;
   padding-bottom: 10%;
-
 }
 
 .transbox a {
@@ -425,7 +420,7 @@ div.transbox p {
 
 .transbox a:hover {
   font-weight: bold;
-  color:#cc0000;
+  color:#9a0026;
   font-size: 3rem;
   
 }
@@ -437,7 +432,6 @@ div.insideTrans {
 	padding-right: ;
 	color: black;
 	text-align: left;
-
 }
 
 @media screen and (max-width: 768px){
@@ -479,7 +473,7 @@ div.insideTrans {
       text-decoration: underline;
     }
 
-    .transbox a:hover {
+.transbox a:hover {
       font-weight: bold;
       color:#9a0026;
       font-size: 3rem;
@@ -571,7 +565,7 @@ div.insideTrans {
     <div class="transbox">
     
 	<h2>
-		<a style='text-decoration: ' href = "{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
+		<a href = "{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
 	</h2>
 	<h2>
 		Add Entry:

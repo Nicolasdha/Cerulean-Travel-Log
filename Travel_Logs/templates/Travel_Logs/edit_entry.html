@@ -39,7 +39,7 @@ body {
     line-height: 50px;
     text-align: center;
     font-size: 3.6rem;
-    color: black ;
+    color: white ;
     z-index: 100
 }
 
@@ -52,7 +52,7 @@ body {
 }
 
 .nav div.logo a {
-    color: black ;
+    color: white ;
     font-size: 3.6rem;
 }
 
@@ -74,12 +74,12 @@ body {
 .nav div.main_list ul li {
     padding-left: 10px;
     font-size: 2.4rem;
-    color: black;
+    color: white;
     opacity: .7;
 }
 
 .nav div.main_list ul li a {
-    color: black;
+    color: white;
 }
 
 .nav div.main_list ul li a:hover {
@@ -131,7 +131,7 @@ body {
         width: 100%;
         height: 0;
         overflow: hidden;
-        opacity: .9;
+        opacity: .8;
     }
 
     .nav div.show_list {
@@ -363,46 +363,28 @@ body {
 }
 
 @media screen and (max-width: 768px){
-    .prefix.nav div.main_list ul {
+    .prefix.nav div.main_list ul:hover {
         flex-direction: column;
         width: 235px;
         height: 6vh;
         right: ;
         left: ;
         bottom:;
-        background-color: black;
+        background-color: white;
         background-position: center left;
         opacity: 1;
     }
 }
-.affix.nav div.logo a {
-    color: white ;
-}
 
-.affix.nav div.main_list ul li a {
+
+.sffix.nav div.main_list ul li a {
         color: white;
     }
-.affix.nav {
-    color: white ;
-}
-.affix.nav div.main_list ul li {
-    color: white;
-}
+
 .affix {
     padding: 0;
-    background-color: black;
+    background-color: #303030;}
 }
-
-.affix.nav div.main_list ul li a:hover {
-    color: forestgreen;
-     text-decoration: none;
-}
-.affix.nav div.logo a:hover {
-    color: forestgreen;
-     text-decoration: none;
-}
-
-
 	
 @media all and (max-width:700px){
 	.myP {
@@ -474,10 +456,6 @@ div.insideTrans {
     }
       div.location {
         display: none;
-    }
-    .home {
-         background-position: -390px 0px ;
-        background-repeat: no-repeat;
     }
 }	    
 
@@ -590,9 +568,9 @@ div.insideTrans {
 	<h2>
 		<a href="{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
 	</h2>
-	<h3>
+	<h2>
 		Edit Entry:
-	</h3>
+	</h2>
 <div class="insideTrans">
 
 <form action = "{% url 'Travel_Logs:edit_entry' entry.id %}" method='post' class='form'>

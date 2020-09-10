@@ -163,7 +163,7 @@ body {
         width: 55%;
         font-size: 2.4rem;
         padding: 0px;
-        color: black ;
+        color: white ;
         font-weight: 450;
     }
 
@@ -171,10 +171,6 @@ body {
         display: block;
 
     }
-    .nav div.main_list ul li a:hover {
-    color: forestgreen;
-     text-decoration: none;
-}
 }
 
 
@@ -370,7 +366,7 @@ body {
 }
 
 @media screen and (max-width: 768px){
-    .affix.nav div.main_list ul {
+    .prefix.nav div.main_list ul {
         flex-direction: column;
         width: 235px;
         height: 6vh;
@@ -379,22 +375,9 @@ body {
         bottom:;
         background-color: black;
         background-position: center left;
-        opacity: 1;
-        color: white;
+        opacity: .8;
     }
 }
-
-@media screen and (max-width: 768px){
-    .affix.nav div.main_list ul li a {
-        color: white ;
-    }
-}
-@media screen and (max-width: 768px){
-    .affix.nav div.main_list ul li a:hover{
-        color: yellowgreen; 
-    }
-}
-
 
 .affix {
     padding: 0;
@@ -495,19 +478,6 @@ div.insideTrans {
     font-size: 3rem;
     opacity: .8;
 }
-
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #5c7b1e;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #56565a;
-}
 </style>
 
 
@@ -603,10 +573,10 @@ div.insideTrans {
     <script>
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
-                $('.nav').addClass('affix');
+                $('.nav').addClass('prefix + affix');
                 console.log("OK");
             } else {
-                $('.nav').removeClass('affix');
+                $('.nav').removeClass('prefix + affix');
             }
         });
 
