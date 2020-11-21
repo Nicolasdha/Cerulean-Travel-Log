@@ -1,10 +1,11 @@
+
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,10 +142,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
 
@@ -369,9 +366,6 @@ body {
         flex-direction: column;
         width: 200px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         opacity: .8;
@@ -386,7 +380,7 @@ body {
 
 div.transbox {
   background-color: #ffffff;
-  opacity: 0.75;
+  opacity: 0.85;
   left: 25vw;
   right: 25vw;
   padding-top: 1%;
@@ -479,8 +473,6 @@ div.insideTrans {
     bottom: 0;
     right: 0;
     font-size: 3rem;
-    opacity: ;
-    display: ;
 }
 
 ::-webkit-scrollbar {
@@ -498,7 +490,7 @@ div.insideTrans {
 </style>
 
 <!------ HTML SECTION ------>
-
+<body>
 <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -546,11 +538,11 @@ div.insideTrans {
 
 				{% buttons %}
 
-					<button name='submit' class='btn btn-primary'>Register</button>
+					<button name="submit" class="btn btn-primary">Register</button>
 
 				{% endbuttons %}
 
-				<input type="hidden" name='next' value="{% url 'Travel_Logs:index' %}"/>
+				<input type="hidden" name="next" value="{% url 'Travel_Logs:index' %}"/>
 
 				</form>
 			</div>
@@ -569,6 +561,7 @@ div.insideTrans {
     <div id="content-2"> “Better to see something once than hear about it a thousand times” <br>― Unknown</div>
     <div id="content-3">“To Travel is to Live” <br>― Hans Christian Andersen</div>
     <div id="content-4"> “The most beautiful in the world is, of course, the world itself.”<br> ― Wallace Stevens</div>
+</div>
 </section>
 {% endblock content %}
 
@@ -583,7 +576,6 @@ div.insideTrans {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 45) {
                 $('.nav').addClass('prefix + affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('prefix + affix');
             }
@@ -591,7 +583,6 @@ div.insideTrans {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
   
@@ -610,3 +601,7 @@ var quote = $('div[id^="content-"]').hide(),
     i = ++i % quote.length;
 })();
     </script>
+ 
+</body>
+</html>
+   

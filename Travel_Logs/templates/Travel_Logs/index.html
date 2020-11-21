@@ -1,10 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
-
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -141,10 +140,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
     }
@@ -371,9 +366,6 @@ body {
         flex-direction: column;
         width: 235px;
         height: 6vh;
-        right: ;
-        padding-left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         color: white;
@@ -381,8 +373,6 @@ body {
         font-size: 1rem;
     }
 }
-
-.quote{}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -492,7 +482,6 @@ body {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('prefix + affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('prefix + affix');
             }
@@ -500,7 +489,6 @@ body {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
   

@@ -1,10 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 
-<! DOCTYPE html>
-<html lang="en">
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +16,7 @@
          <link rel="stylesheet" 
           href= "learning_logs:stylesheet.css"> 
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  
+</head>  
     <style> 
           
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
@@ -101,7 +102,6 @@ body {
     color: gray;
     line-height: 50px;
     font-size: 2.4rem;
-    opacity: 
 }
 
 .nav div.main_list ul li a:hover {
@@ -164,9 +164,6 @@ body {
         flex-direction: column;
         width: 50vw;
         height: 20vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         /*same background color of navbar*/
         background-position: center left;
@@ -393,16 +390,12 @@ body {
 }
 
 
-}
-
 .myH2 {
 	text-align:center;
 	font-size: 4rem;
 }
 .myP {
 	text-align: center;
-	padding-left: ;
-	padding-right: ;
 	margin-top: 30px;
 	font-size: 20px;
 } 
@@ -412,8 +405,9 @@ body {
 		padding:2%;
 	}
 }
-
 </style>
+<body>
+
 <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -451,9 +445,8 @@ body {
 				{% block content %}{% endblock content %}
 			</div>
 		</div> <!-- /container -->
-	</body>
-</html>
 
+</div>
   
 
 <!-- Jquery needed - NOT NEEDED? --> 
@@ -465,7 +458,6 @@ body {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('affix');
             }
@@ -473,7 +465,6 @@ body {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
   
@@ -483,3 +474,5 @@ body {
 
 
 
+</body>
+</html>

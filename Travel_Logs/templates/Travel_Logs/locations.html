@@ -1,10 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
-
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -142,10 +142,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
     }
@@ -367,22 +363,15 @@ body {
 
 .affix {
     padding: 0;
-    background-color: #111;}
+    background-color: #111;
 }
 
 
 .transbox {
   background-color: transparent;
   opacity: 1;
-  left: ;
-  right: ;
   padding-top: 1%;
   top: 0px ;
-  bottom: ;
-  height: ;
-  width: ;
-  border-radius: ;
-  padding-right: ;
   z-index: 1;
   position: relative;
 
@@ -394,9 +383,9 @@ body {
 	color: #00a9ea;
 	list-style: none;
 	font-size: 2.4rem;
-  position: relative;
-  padding-bottom:0%;
-}
+    position: relative;
+    padding-bottom:0%;
+    }
 
 .home a{
 	color:#00a9ea;
@@ -427,7 +416,6 @@ body {
     height:50vh;
     width:300px;
     padding-bottom: 2%;
-    padding-left: %;
     padding-top: 0%;
     position: relative;
 
@@ -459,7 +447,6 @@ body {
         list-style: none;
         font-size: 2.3rem;
         position: relative;
-        font-weight: ;
     }
 
     .divScroll {
@@ -469,8 +456,6 @@ body {
         height:50vh;
         width:55vw;
         padding-right: 1%;
-        padding-left: %;
-        padding-top: %;
         position: relative;
     }
     .home a{
@@ -491,12 +476,9 @@ body {
       background-color: #fff;
       opacity: .8;
       left: 20%;
-      right:;
       top: 22% ;
       height: 52vh;
       width: 60vw;
-      border-radius: ;
-      padding-right: ;
       z-index: 1;
     }
 
@@ -521,7 +503,6 @@ body {
         list-style: none;
         font-size: 2.3rem;
         position: relative;
-        font-weight: ;
     }
 
     .divScroll {
@@ -531,8 +512,6 @@ body {
         height:55vh;
         width:75.6vw;
         padding-right: 1%;
-        padding-left: %;
-        padding-top: %;
         position: relative;
     }
     .home a{
@@ -553,12 +532,9 @@ body {
       background-color: #fff;
       opacity: .8;
       left: 10%;
-      right:;
       top: 22% ;
       height: 57vh;
       width: 80vw;
-      border-radius: ;
-      padding-right: ;
       z-index: 1;
     }
 
@@ -583,8 +559,6 @@ body {
         margin-left: 1%;
         height:40vh;
         width:35vw;
-        padding-right: %;
-        padding-left: %;
         padding-top: 0%;
         position: relative;
     }
@@ -596,14 +570,12 @@ body {
     list-style: none;
     font-size: 2.2rem;
     position: relative;
-    font-weight: ;
     }
 }
 
 
 @media screen and (max-width: 1100px) and (min-width: 801px){
     .insideHome {
-        padding-top: %;
         font-size: 2.2rem;
     }
      .divScroll {
@@ -612,8 +584,6 @@ body {
         margin-left: 1%;
         height:45vh;
         width:28vw;
-        padding-right: %;
-        padding-left: %;
         padding-top: 0%;
         position: relative;
     }
@@ -635,9 +605,6 @@ body {
         flex-direction: column;
         width: 235px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         opacity: 1;
@@ -718,9 +685,12 @@ body {
 	{% endfor %}
     <div class="topic">
     <a href = "{% url 'Travel_Logs:new_location' %}"><br> Add a new location:</a>
+    </div>
+</p>
 </div>
+
 </div>
-</div>
+
 </div>
 
 <div class="location">
@@ -729,9 +699,8 @@ body {
     	</section>
         }
 
-</p>
 
-</div>
+
 
 <section class="quote">
 <div class="quote">
@@ -746,8 +715,7 @@ body {
 
 
 
-</body>
-</html>
+
 {% endblock content %}
 
 
@@ -764,7 +732,6 @@ body {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('prefix + affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('prefix + affix');
             }
@@ -772,7 +739,6 @@ body {
 
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
@@ -789,3 +755,5 @@ var quote = $('div[id^="content-"]').hide(),
     i = ++i % quote.length;
 })();
     </script>
+</body>
+</html>

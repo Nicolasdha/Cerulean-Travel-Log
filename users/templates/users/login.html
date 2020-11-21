@@ -1,10 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
         <title> Travel Log - Log In </title>
 
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  
+  </head>
 <!-------------- CSS SECTION ----------->
 
     <style> 
@@ -152,10 +152,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
 
@@ -382,9 +378,6 @@ body {
         flex-direction: column;
         width: 200px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: #303030;
         background-position: center left;
         opacity: .8;
@@ -394,7 +387,7 @@ body {
 .affix {
     padding: 0;
     background-color: #303030;
-    opacity: .8;}
+    opacity: .8;
 }
 
 .leftside, .rightside {
@@ -511,22 +504,22 @@ body {
 
     <div class="row no-gutters">
 		<div class="col-sm-6 no-gutters">
-			<div class='leftside'>
+			<div class="leftside">
 				</div>
 				</div>
 		<div class="col-sm-6 no-gutters">
 			<div class="rightside">
-                <div class='transbox'>
+                <div class="transbox">
 
-				<form method= "post" action="{% url 'users:login' %}" class="form size">
+				<form method= "post" action="{% url 'users:login' %}" class="form size" id="form">
 					{% csrf_token %}
 					{% bootstrap_form form %}
 
 					{% buttons %}
-					<button name='submit' class="btn btn-secondary">log in</button>
+					<button name="submit" class="btn btn-secondary">log in</button>
 					{% endbuttons %}
 
-					<input type = 'hidden' name='next' value="{% url 'Travel_Logs:index' %}">
+					<input type = "hidden" name="next" value="{% url 'Travel_Logs:index' %}">
 				</form>
             </div>
 			</div>
@@ -539,12 +532,10 @@ body {
     <div id="content-2"> “Better to see something once than hear about it a thousand times” <br>― Unknown</div>
     <div id="content-3">“To Travel is to Live” <br>― Hans Christian Andersen</div>
     <div id="content-4"> “The most beautiful in the world is, of course, the world itself.”<br> ― Wallace Stevens</div>
+</div>
 </section>
 
 {% endblock content %}
-
-</body>
-</html>
 
 <!--------------- JAVASCRIPT SECTION ------------>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -556,7 +547,6 @@ body {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('affix + prefix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('affix +prefix');
             }
@@ -564,7 +554,6 @@ body {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
@@ -579,4 +568,10 @@ var quote = $('div[id^="content-"]').hide(),
 
     i = ++i % quote.length;
 })();
+
     </script>
+
+ 
+</body>
+</html>
+   

@@ -1,10 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
 
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -140,10 +140,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
     }
@@ -364,7 +360,7 @@ body {
 
 .affix {
     padding: 0;
-    background-color: #303030;}
+    background-color: #303030;
 }
 
 
@@ -378,7 +374,6 @@ div.transbox {
   background-color: transparent;
   opacity: 0.75;
   left: 10%;
-  padding-right:;
   padding-top: 1%;
   top: 5%;
   position: relative;
@@ -391,16 +386,11 @@ div.transbox {
 }
 
 div.transbox p {
-    margin: ;
     color: #000000;
     font-size: 1.5rem;
 }
 
 div.insideTrans {
-	padding-bottom: ;
-	padding-top: ;
-	padding-left: ;
-	padding-right: ;
 	text-align: left;
 }
 
@@ -505,16 +495,13 @@ header {
         flex-direction: column;
         width: 235px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         opacity: .8;
     }
 }
 </style>
-
+<body>
 <!------ HTML SECTION ------>
 
 <nav class="nav">
@@ -565,7 +552,7 @@ header {
 <header>
 <h1>{{ location }}</h1>
 
-	   <h3><a href ="{% url 'Travel_Logs:new_entry' location.id %}">Add New Entry</a><h3>
+	   <h3><a href ="{% url 'Travel_Logs:new_entry' location.id %}">Add New Entry</a></h3>
 
 
 </header>
@@ -573,14 +560,12 @@ header {
 
 {% for entry in entries %}
 
-	<div class='panel panel-primary'>
-        <small>
+	<div class="panel panel-primary">
 
 		<div class="panel-heading">
+            <small>
 
 				{{ entry.date_added|date:'M d, Y H:i'}}
-
-			
 
 				<a  href="{% url 'Travel_Logs:edit_entry' entry.id %}">Edit Entry</a>
 
@@ -605,10 +590,9 @@ header {
 	</h3>
 
 	{% endfor %}
-
-  
- </section>
 </div>
+  </div>
+ </section>
   <div class="location">
         <big>[ </big>Davos Monstein, Switzerland<big> ]</big>
 </div>
@@ -621,11 +605,11 @@ header {
     <div id="content-4">“Though we travel the world over to find the beautiful, we must carry it with us, or we find it not.”<br> ― Ralph Waldo Emerson</div>
     <div id="content-5">“I read; I travel; I become”<br> ― Derek Walcott</div>
     <div id="content-6">“One's destination is never a place, but a new way of seeing things.”<br>― Henry Miller</div>
+</div>
 </section>
 
 
-</body>
-</html>
+
 {% endblock content %}
 
 
@@ -639,7 +623,6 @@ header {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('prefix + affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('prefix + affix');
             }
@@ -649,7 +632,6 @@ header {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
@@ -665,3 +647,6 @@ var quote = $('div[id^="content-"]').hide(),
     i = ++i % quote.length;
 })();
     </script>
+
+</body>
+</html>

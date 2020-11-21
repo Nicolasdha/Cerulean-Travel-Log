@@ -1,10 +1,8 @@
-{% load bootstrap3 %}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -143,10 +141,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
     }
@@ -374,9 +368,6 @@ body {
         flex-direction: column;
         width: 235px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         opacity: 1;
@@ -513,7 +504,7 @@ div.insideTrans {
 
 <!------ HTML SECTION ------>
 
-
+<body>
 <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -559,22 +550,24 @@ div.insideTrans {
 				Add a new location:
 			</p>
 
-			<form action="{% url 'Travel_Logs:new_location' %}" method='post' class='form'>
+			<form action="{% url 'Travel_Logs:new_location' %}" method="post" class="form">
 
 				{% csrf_token %}
 
 				{% bootstrap_form form %}
 
 			{% buttons %}
-				<button name="submit" class='btn btn-success'>Add Location</button>
+				<button name="submit" class="btn btn-success">Add Location</button>
 			{% endbuttons %}
-
+            </form>
   </div>
+    </div>
 
     </section>
 <section>
     <div class="location">
         <big>[ </big>Hvolsvöllur, Iceland<big> ]</big>
+    </div>
 </section>
 
 
@@ -586,11 +579,10 @@ div.insideTrans {
 <br> ― Alex Garland</div>
     <div id="content-4">“I think one travels more usefully when they travel alone, because they reflect more."<br> ― Thomas Jefferson</div>
     <div id="content-5">“The saddest journey in the world is the one that follows a precise itinerary. Then you're not a traveler.”<br>― Guillermo del Toro</div>
+</div>
 </section>
 
 
-</body>
-</html>
 {% endblock content %}
 
 
@@ -604,7 +596,6 @@ div.insideTrans {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('affix');
             }
@@ -613,7 +604,6 @@ div.insideTrans {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
@@ -630,3 +620,5 @@ var quote = $('div[id^="content-"]').hide(),
 })();
 
     </script>
+</body>
+</html>

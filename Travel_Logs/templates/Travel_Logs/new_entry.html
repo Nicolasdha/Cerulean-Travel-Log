@@ -1,10 +1,9 @@
+
+<!DOCTYPE html>
+<html lang="en">
 {% load bootstrap3 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-
-
-<! DOCTYPE html>
-<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -147,10 +146,6 @@ body {
     .nav div.main_list ul {
         flex-direction: column;
         width: 235px;
-        height: ;
-        right: ;
-        left: ;
-        bottom:;
         background-color: transparent;
         background-position: center left;
     }
@@ -372,9 +367,6 @@ body {
         flex-direction: column;
         width: 235px;
         height: 6vh;
-        right: ;
-        left: ;
-        bottom:;
         background-color: black;
         background-position: center left;
         opacity: .8;
@@ -382,7 +374,7 @@ body {
 }
 .affix {
     padding: 0;
-    background-color: black;}
+    background-color: black;
 }
 	
 @media all and (max-width:700px){
@@ -402,7 +394,6 @@ div.transbox {
   bottom: 0;
   position: relative;
   width: 80%;
-  height: ;
   border-radius: 25px;
   padding-right: 7%;
   text-align: left;
@@ -431,10 +422,6 @@ div.transbox p {
 }
 
 div.insideTrans {
-	padding-bottom: ;
-	padding-top: ;
-	padding-left: ;
-	padding-right: ;
 	color: black;
 	text-align: left;
 
@@ -571,14 +558,14 @@ div.insideTrans {
     <div class="transbox">
     
 	<h2>
-		<a style='text-decoration: ' href = "{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
+		<a href = "{% url 'Travel_Logs:location' location.id %}">{{ location }}</a>
 	</h2>
 	<h2>
 		Add Entry:
 	</h2>
 <div class="insideTrans">
  
-<form action = "{% url 'Travel_Logs:new_entry' location.id %}" method = 'post' class='form'>
+<form action = "{% url 'Travel_Logs:new_entry' location.id %}" method = "post" class="form">
 
 	{% csrf_token %}
 
@@ -586,12 +573,13 @@ div.insideTrans {
 
 {% buttons %}
 
-	<button name='submit' class='btn btn-primary'>Add Entry</button>
+	<button name="submit" class="btn btn-primary">Add Entry</button>
 
 {% endbuttons %}
 
 </form>
 
+  </div>
   </div>
  </section>
 <div class="location">
@@ -606,10 +594,10 @@ div.insideTrans {
     <div id="content-3">“I wandered everywhere, through cities and countries wide. And everywhere I went, the world was on my side.”<br> ― Roman Payn</div>
     <div id="content-4">“Wherever you go, you take yourself with you.”<br> ― Neil Gaiman</div>
     <div id="content-5">“Make voyages. Attempt them. There's nothing else.”<br>― Tennessee Williams</div>
+</div>
 </section>
 
-</body>
-</html>
+
 {% endblock content %}
 
 
@@ -624,7 +612,6 @@ div.insideTrans {
         $(window).scroll(function() {
             if ($(document).scrollTop() > 50) {
                 $('.nav').addClass('prefix + affix');
-                console.log("OK");
             } else {
                 $('.nav').removeClass('prefix + affix');
             }
@@ -633,7 +620,6 @@ div.insideTrans {
         
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
-    console.log("Clicked menu");
     $("#mainListDiv").toggleClass("show_list");
     $("#mainListDiv").fadeIn();
 });
@@ -649,3 +635,6 @@ var quote = $('div[id^="content-"]').hide(),
     i = ++i % quote.length;
 })();
     </script>
+
+</body>
+</html>
