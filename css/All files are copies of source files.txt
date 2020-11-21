@@ -1,0 +1,7 @@
+All files located in this folder are copies of their source files.
+
+Please find the source files located in:
+
+Travel_Logs/templates/Travel_Logs/
+
+users/templates/users/

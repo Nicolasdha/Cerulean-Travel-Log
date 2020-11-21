@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+!
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - Home Page</title>
+
+    </head>
+
+
+<!------ HTML SECTION ------>
+
+
+{% block content %}
+<body>
+
+<nav class="nav">
+        <div class="container">
+
+            <div class="logo">
+
+                <a href="{% url 'Travel_Logs:index' %}">Travel Log</a>  |
+
+            </div>
+
+            <div id="mainListDiv" class="main_list">
+
+                <ul class="navlinks">
+
+                	{% if user.is_authenticated %}
+
+                	   <li ><a href="{% url 'Travel_Logs:locations' %}">Locations</a> | <a href="{% url 'users:logout' %}">Log Out</a></li>
+
+                    <!--<li><a href="{% url 'users:logout' %}">Log Out</a></li>-->
+
+					{% else %}
+
+					<li><a href="{% url 'users:register' %}">Register</a> | <a href="{% url 'users:login' %}" > Log In</a></li>
+
+					<!--<li><a href="{% url 'users:login' %}" >Log In</a></li>-->
+
+					{% endif %}
+
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+</nav>
+
+<section class="home">
+    <div class="location">
+        <big>[</big> Lago di Braies, Italy  <big>]</big>
+</div>
+</section>
+
+<section style="text-align:center;padding:25px;font-size: 2rem;color:gray;">
+    <div id="content-1">“The journey is part of the experience - an expression of the seriousness of one's intent.”<br>― Anthony Bourdain</div>
+    <div id="content-2">“The journey of a thousand miles begins with a single step.”<br>― Lao Tzu</div>
+    <div id="content-3">“I heard an airplane passing overhead. I wished I was on it.”<br>― Charles Bukowski</div>
+    <div id="content-4">“Every hundred feet the world changes”<br>― Roberto Bolaño</div>
+    <div id="content-5">“The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.”<br>― Marcel Proust</div>
+    <div id="content-6">“Travel is fatal to prejudice, bigotry, and narrow-mindedness.”<br>― Mark Twain</div>
+</section>
+
+
+
+{% endblock content %}
+
+
+<!--------------- JS SECTION ------------>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="js/scripts.js"></script>
+
+<!-- Function used to display drop down menu-->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('prefix + affix');
+            } else {
+                $('.nav').removeClass('prefix + affix');
+            }
+        });
+        
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+  
+
+});
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
+
+    </script>
+</body>
+</html>

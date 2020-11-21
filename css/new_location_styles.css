@@ -1,0 +1,481 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+html,
+body {
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+    background-color: black;
+}
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    line-height: 50px;
+    text-align: center;
+    font-size: 3.6rem;
+    color: white;
+    z-index: 100;
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 0px;
+    margin-left: 32%;
+    opacity: .7;
+}
+
+
+.nav div.logo a {
+    color: white;
+    font-size: 3.6rem;
+}
+
+.nav div.logo a:hover {
+    color: yellowgreen;
+     text-decoration: none;
+}
+
+.nav div.main_list {
+    float: left;
+}
+
+.nav div.main_list ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    padding-left: 10px;
+    font-size: 2.4rem;
+    color: white;
+    opacity: .7;
+}
+
+.nav div.main_list ul li a {
+    color: white;
+}
+
+.nav div.main_list ul li a:hover {
+    color: yellowgreen;
+     text-decoration: none;
+}
+
+
+/* Home section */
+
+.home {
+	height: 100vh;
+	width: 100%;
+    background-image: url(https://i.ibb.co/LRrkRP7/robert-lukeman-z-NN6ub-Hmru-I-unsplash.jpg);
+    background-position: center top;
+	background-size: cover;
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 15px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .navTrigger {
+        display: block;
+    }
+
+    .nav div.logo {
+        margin-left: 0px;
+    }
+
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        opacity: .8;
+    }
+
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 235px;
+        background-color: transparent;
+        background-position: center left;
+    }
+
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: left;
+         color: yellowgreen;
+    }
+
+
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 55%;
+        font-size: 2.4rem;
+        padding: 0px;
+        color: black ;
+        font-weight: 450;
+    }
+
+    .nav div.media_button {
+        display: block;
+
+    }
+    .nav div.main_list ul li a:hover {
+    color: forestgreen;
+     text-decoration: none;
+}
+}
+
+
+/* Animation */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@media screen and (max-width: 768px){
+    .affix.nav div.main_list ul {
+        flex-direction: column;
+        width: 235px;
+        height: 6vh;
+        background-color: black;
+        background-position: center left;
+        opacity: 1;
+        color: white;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .affix.nav div.main_list ul li a {
+        color: white ;
+    }
+}
+@media screen and (max-width: 768px){
+    .affix.nav div.main_list ul li a:hover{
+        color: yellowgreen; 
+    }
+}
+
+
+.affix {
+    padding: 0;
+    background-color: #111;
+}
+
+div.transbox {
+  background-color: transparent;
+  opacity: 0.75;
+  left: 3vw;
+  right: 0vw;
+  padding-top: 1%;
+  top: 17%;
+  bottom: 0;
+  position: relative;
+  width: 50%;
+  border-radius: 25px;
+}
+
+div.insideTrans {
+	font-size: 15px;
+	padding-bottom: 10%;
+	padding-top: 2%;
+	padding-left: 2%;
+	padding-right: 30%;
+}
+
+@media screen and (max-width: 500px){
+    div.transbox {
+      margin: 0px;
+      background-color: transparent;
+      opacity: 0.9;
+      left: 13vw;
+      right: 0vw;
+      padding-left: 2%;
+      top: 25%;
+      bottom: 0;
+      position: relative;
+      width: 75%;
+      border-radius: 25px;
+    }
+
+    .home {
+        height: 100vh;
+        width: 100%;
+        background-image: url(https://i.ibb.co/LRrkRP7/robert-lukeman-z-NN6ub-Hmru-I-unsplash.jpg);
+        background-position: -490px 0px ;
+        background-size: cover ;
+        background-repeat: no-repeat;
+    }
+    div.insideTrans {
+    color: white;
+}
+  div.location {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px){
+    div.transbox {
+    padding-right: 9%;
+    }
+    div.insideTrans {
+    padding-right: 0%;
+    }
+}
+@media screen and (max-width: 899px) and (min-width:500px){
+    div.transbox {
+    padding-right: 1%;
+    }
+     div.insideTrans {
+    padding-right: 0%;
+    }
+      div.location {
+        display: none;
+    }
+}
+
+
+
+.quote {
+    text-align: center;
+    padding-left: 7vw ;
+    padding-right: 7vw ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: gray;
+}
+
+
+.location {
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: -0;
+    font-size: 3rem;
+    opacity: .8;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5c7b1e;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #56565a;
+}

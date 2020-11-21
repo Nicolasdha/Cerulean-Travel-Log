@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+             <link href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAApaWlAE9PTwC3t7cA6+vrAIyMjAACAgIANjY2AMnJyQBISEgA29vbAFFRUQCwsLAA5OTkAO3t7QAvLy8Al5eXAPb29gD///8A1NTUAEpKSgDm5uYAxMTEAJmZmQAPDw8AISEhAL29vQAzMzMAPDw8ABoaGgB5eXkA4eHhAIKCggBXV1cAYGBgAAEBAQDz8/MAaWlpAHJycgBHR0cAjY2NAAMDAwBiYmIAlpaWADc3NwD+/v4AFRUVAKioqAAeHh4ABQUFADk5OQDMzMwA1dXVAEtLSwAgICAABwcHAMXFxQAQEBAAeHh4AIGBgQCKiooAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASDgAAAAAACjMAAAAAAAASJiIAAAAAAAkLAAAAAAAALSU3FQAAAAA1BhAaAAAAABI8ADoAAAAAKwAYOzgAAAASLwA5JAAAABQAIwApDAAAADMAAAUAACEjKzMBAwAAAAAAIwAwACIAFwAAAAAAAAAAABgAADIjKAAAAAAAAAAAAAAPIwAABw0AAAAAAAAAAAAAAgAjAAAAGyATAAAAAAAAACUAAAAAAAAAADYeNAAAAAgxLhsbGxsbGAAjJwAAAAQdGR8AAAAAAAAAAAAAAAAcLBUAAAAAAAAAAAAAAAAWKhEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM+fAACPnwAAh4cAAIeDAACDgQAAwwMAAOI/AADgfwAA4H8AAOAPAADgAQAAwAMAAIf/AACP/wAAH/8AAP//AAA=" rel="icon" type="image/x-icon" />
+
+        <title> Travel Log - Log In </title>
+
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+
+<!---------- HTML SECTION  ------->
+<nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'Travel_Logs:index' %}">Travel Log</a>  |
+
+            </div>
+            <div id="mainListDiv" class="main_list">
+
+                <ul class="navlinks">
+
+                	{% if user.is_authenticated %}
+
+                	<li><a href="{% url 'Travel_Logs:locations' %}">Locations</a> | </li>
+
+					<li><a href="{% url 'users:logout' %}">Log Out</a></li>
+
+					{% else %}
+
+					<li><a href="{% url 'users:register' %}">Register</a> | <a href="{% url 'users:login' %}" >Log In</a></li>
+
+					<!--<li><a href="{% url 'users:login' %}" >Log In</a></li>-->
+					{% endif %}
+
+                </ul>
+            </div>
+            <span class="navTrigger">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+</nav>
+
+    <section class="home">
+    </section>
+
+<body>
+{% block content %}
+
+    <div class="row no-gutters">
+		<div class="col-sm-6 no-gutters">
+			<div class="leftside">
+				</div>
+				</div>
+		<div class="col-sm-6 no-gutters">
+			<div class="rightside">
+                <div class="transbox">
+
+				<form method= "post" action="{% url 'users:login' %}" class="form size" id="form">
+					{% csrf_token %}
+					{% bootstrap_form form %}
+
+					{% buttons %}
+					<button name="submit" class="btn btn-secondary">log in</button>
+					{% endbuttons %}
+
+					<input type = "hidden" name="next" value="{% url 'Travel_Logs:index' %}">
+				</form>
+            </div>
+			</div>
+		</div>
+    </div>
+
+<section class="quote">
+<div class="quote">
+    <div id="content-1">“The gladdest moment in human life is a departure into unknown lands.” <br>― Sir Richard Burton</div>
+    <div id="content-2"> “Better to see something once than hear about it a thousand times” <br>― Unknown</div>
+    <div id="content-3">“To Travel is to Live” <br>― Hans Christian Andersen</div>
+    <div id="content-4"> “The most beautiful in the world is, of course, the world itself.”<br> ― Wallace Stevens</div>
+</div>
+</section>
+
+{% endblock content %}
+
+<!--------------- JAVASCRIPT SECTION ------------>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+<!-- Function used to display drop down menu-->
+
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix + prefix');
+            } else {
+                $('.nav').removeClass('affix +prefix');
+            }
+        });
+        
+        $('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+});
+
+var quote = $('div[id^="content-"]').hide(),
+    i = 0;
+
+(function cycle() { 
+    quote.eq(i).fadeIn(500)
+              .delay(4000)
+              .fadeOut(900, cycle);
+
+    i = ++i % quote.length;
+})();
+
+    </script>
+
+ 
+</body>
+</html>
+   
