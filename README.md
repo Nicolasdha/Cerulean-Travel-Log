@@ -19,7 +19,7 @@ Hello! After travelling to many different countries, and participating in a grea
 ### Technologies
 This website was created using the following technologies:
 
-|   Frontend   |    Backend     |
+|   Front End   |    Back End     |
 | :----------- | :------------: |
 |    HTML5     |    Python 3.8.5|
 |    CSS3      |   Django 3.1.1 |
